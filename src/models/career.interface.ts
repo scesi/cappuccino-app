@@ -1,8 +1,8 @@
-import { Level } from "./level.interface";
+import { Level } from './level.interface'
 
 export interface Career {
-  code: string;
-  levels: Level[];
-  semester: string;
-  name: string;
+  code: string
+  levels: Level[]
+  semester: string
+  name: string
 }

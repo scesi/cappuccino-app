@@ -19,9 +19,9 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  }
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 }
