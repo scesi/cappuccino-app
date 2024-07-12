@@ -1,6 +1,6 @@
-import { Subject } from "./subject.interface";
+import { Subject } from './subject.interface'
 
 export interface Level {
-  code: string;
-  subjects: Subject[];
+  code: string
+  subjects: Subject[]
 }
