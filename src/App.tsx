@@ -3,8 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const variable_sin_usar = 'variable_sin_usar'
+
 function App() {
   const [count, setCount] = useState(0)
+  const booleanVar = true
+
+  if (booleanVar) {
+    const [count, setCount] = useState(0)
+  }
 
   return (
     <>
