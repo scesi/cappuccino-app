@@ -1,4 +1,5 @@
 import logoCappuchino from '../../assets/logoCappuchino.svg'
+import Card from '../../components/Card/Card'
 import SearchBar from '../../components/Search-bar/Search-bar'
 
 import './Homepage.css'
@@ -17,7 +18,16 @@ const Homepage = () => {
         />
       </section>
       <section className='careers'>
-        <SearchBar />
+        <SearchBar title='Busca tu carrera'/>
+        <Card title='LICENCIATURA EN BIOLOGÍA'/>
+        <Card title='LICENCIATURA EN DIDACTICA DE LA FISICA'/>
+        <Card title='LICENCIATURA EN DIDACTICA DE LA MATEMATICA'/>
+        <Card title='LICENCIATURA EN FISICA'/>
+        <Card title='LICENCIATURA EN INGENIERIA CIVIL (NUEVO)'/>
+        <Card title='LICENCIATURA EN INGENIERIA DE ALIMENTOS'/>
+        <Card title='LICENCIATURA EN INGENIERIA DE SISTEMAS'/>
+        <Card title='LICENCIATURA EN INGENIERIA ELECTRICA'/>
+        <Card title='LICENCIATURA EN INGENIERIA ELECTROMECANICA'/>
       </section>
     </>
   )

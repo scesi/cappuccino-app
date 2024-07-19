@@ -9,6 +9,11 @@
 }
 
 .careers {
+    display: flex;
+    flex-direction: column;
     padding-inline: 20px;
     margin-top: 20px;
+    font-size: 12px;
+    font-weight: 200;
+    gap: 10px;
 }
