@@ -6,8 +6,8 @@ import Homepage from './views/Homepage/Homepage'
 function App() {
   return (
     <>
-      <Header/>
-      <Homepage/>
+      <Header />
+      <Homepage />
     </>
   )
 }

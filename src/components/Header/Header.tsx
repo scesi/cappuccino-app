@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header>
       <img className="logoscesi" src={logoSCESI} alt="logo scesi" />
-      <h1 className='title'>CAPPUCHINO</h1>
+      <h1 className="title">CAPPUCHINO</h1>
       <ThreeDots></ThreeDots>
     </header>
   )

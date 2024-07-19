@@ -1,6 +1,6 @@
 import arrowIcon from '../../assets/arrowIcon.svg'
 
-import "./Card.css"
+import './Card.css'
 const Card = ({ title }: { title: string }) => {
   return (
     <section className="card">

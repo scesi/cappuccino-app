@@ -17,17 +17,17 @@ const Homepage = () => {
           alt="logo Cappuchino"
         />
       </section>
-      <section className='careers'>
-        <SearchBar title='Busca tu carrera'/>
-        <Card title='LICENCIATURA EN BIOLOGÍA'/>
-        <Card title='LICENCIATURA EN DIDACTICA DE LA FISICA'/>
-        <Card title='LICENCIATURA EN DIDACTICA DE LA MATEMATICA'/>
-        <Card title='LICENCIATURA EN FISICA'/>
-        <Card title='LICENCIATURA EN INGENIERIA CIVIL (NUEVO)'/>
-        <Card title='LICENCIATURA EN INGENIERIA DE ALIMENTOS'/>
-        <Card title='LICENCIATURA EN INGENIERIA DE SISTEMAS'/>
-        <Card title='LICENCIATURA EN INGENIERIA ELECTRICA'/>
-        <Card title='LICENCIATURA EN INGENIERIA ELECTROMECANICA'/>
+      <section className="careers">
+        <SearchBar title="Busca tu carrera" />
+        <Card title="LICENCIATURA EN BIOLOGÍA" />
+        <Card title="LICENCIATURA EN DIDACTICA DE LA FISICA" />
+        <Card title="LICENCIATURA EN DIDACTICA DE LA MATEMATICA" />
+        <Card title="LICENCIATURA EN FISICA" />
+        <Card title="LICENCIATURA EN INGENIERIA CIVIL (NUEVO)" />
+        <Card title="LICENCIATURA EN INGENIERIA DE ALIMENTOS" />
+        <Card title="LICENCIATURA EN INGENIERIA DE SISTEMAS" />
+        <Card title="LICENCIATURA EN INGENIERIA ELECTRICA" />
+        <Card title="LICENCIATURA EN INGENIERIA ELECTROMECANICA" />
       </section>
     </>
   )
