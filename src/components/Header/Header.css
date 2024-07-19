@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+  background-color: #101227;
+  align-items: center;
+}
+
+.logoscesi {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 20px;
+}
+
+.title {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-right: 20px;
+}
