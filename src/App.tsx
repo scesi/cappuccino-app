@@ -1,44 +1,57 @@
-import './App.css'
 import ScheduleTable from './components/ScheduleTable'
-import { Day, Schedule } from './models'
+import { subjects } from './data/subjects'
+import { Day } from './models/index'
 
-const sampleSchedule: Schedule[] = [
-  {
-    day: Day.Lu,
-    start: '1200',
-    end: '1415',
-    duration: 3,
-    room: '608A',
-    isClass: false,
-    teacher: 'FERNANDEZ TERRAZAS ERIKA',
-  },
-  {
-    day: Day.Ma,
-    start: '1700',
-    end: '1030',
-    duration: 3,
-    room: '614',
-    isClass: false,
-    teacher: 'ALFARO DENUS GONZALO',
-  },
-  {
-    day: Day.Mi,
-    start: '0800',
-    end: '1030',
-    duration: 3,
-    room: '614',
-    isClass: false,
-    teacher: 'ALFARO DENUS GONZALO',
-  },
-]
+const parseDay = (day: string): Day => {
+  switch (day) {
+    case 'LU':
+      return Day.Lu
+    case 'MA':
+      return Day.Ma
+    case 'MI':
+      return Day.Mi
+    case 'JU':
+      return Day.Ju
+    case 'VI':
+      return Day.Vi
+    case 'SA':
+      return Day.Sa
+    default:
+      throw new Error(`Unknown day: ${day}`)
+  }
+}
+
+
+/**
+ * Combina y transforma los datos de horarios de las materias para generar una lista plana
+ * de objetos `Schedule` con el nombre y el código de la materia.
+ *
+ * Esta función hace lo siguiente:
+ * 1. Itera sobre la lista de materias (`subjects`).
+ * 2. Para cada materia, itera sobre sus grupos (`groups`).
+ * 3. Para cada grupo, itera sobre su horario (`schedule`).
+ * 4. Transforma cada elemento del horario añadiendo el nombre y el código de la materia.
+ * 5. Convierte el `day` en un valor del tipo `Day` usando la función `parseDay`.
+ *
+ *
+ */
+const combinedSchedule = subjects.flatMap(subject =>
+  subject.groups.flatMap(group =>
+    group.schedule.map(scheduleItem => ({
+      ...scheduleItem,
+      day: parseDay(scheduleItem.day),
+      subjectName: subject.name,
+      subjectCode: subject.code,
+    }))
+  )
+)
+
 function App() {
   return (
-    <>
-      <div className="App">
-        <h1>Schedule</h1>
-        <ScheduleTable schedule={sampleSchedule} />
-      </div>
-    </>
+    <div className="App">
+      <h1>Schedule</h1>
+      <ScheduleTable schedule={combinedSchedule} />
+    </div>
   )
 }
 
