@@ -35,3 +35,9 @@
   max-width: 168px;
   flex: 1 1 0%;
 }
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 2px 2px #aeaeae84;
+  border-radius: 4px;
+}
