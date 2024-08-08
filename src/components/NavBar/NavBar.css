@@ -41,3 +41,7 @@ button:focus-visible {
   box-shadow: 0 0 2px 2px #aeaeae84;
   border-radius: 4px;
 }
+
+.active {
+  background-color: #951616;
+}
