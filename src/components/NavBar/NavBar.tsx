@@ -2,6 +2,8 @@ import { useState } from 'react'
 import IconCarreras from '../../assets/Icons/icon-carreras.png'
 import IconHorario from '../../assets/Icons/icon-horario.png'
 import IconMas from '../../assets/Icons/icon-mas.png'
+import IconHorarioActive from '../../assets/Icons/icon-horario-active.png'
+import IconMasActive from '../../assets/Icons/icon-mas-active.png'
 import './NavBar.css'
 
 const NavBar = () => {
@@ -27,14 +29,20 @@ const NavBar = () => {
           className={`button-icon ${activeButtonIndex === 1 ? 'active' : ''}`}
           onClick={() => handleButtonClick(1)}
         >
-          <img src={IconHorario} alt="icon description" />
+          <img
+            src={activeButtonIndex === 1 ? IconHorarioActive : IconHorario}
+            alt="icon description"
+          />
           <span>Horario</span>
         </button>
         <button
           className={`button-icon ${activeButtonIndex === 2 ? 'active' : ''}`}
           onClick={() => handleButtonClick(2)}
         >
-          <img src={IconMas} alt="icon description" />
+          <img
+            src={activeButtonIndex === 2 ? IconMasActive : IconMas}
+            alt="icon description"
+          />
           <span>M&aacute;s</span>
         </button>
       </div>
