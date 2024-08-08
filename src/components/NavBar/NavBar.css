@@ -18,6 +18,7 @@
 
 .button-icon {
   height: 100%;
+  font-size: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,5 +44,6 @@ button:focus-visible {
 }
 
 .active {
-  background-color: #951616;
+  font-weight: 700;
+  color: black;
 }
