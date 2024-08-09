@@ -77,11 +77,11 @@ const ScheduleTable: React.FC<ScheduleTableProps> = ({ schedule }) => {
         >
           <strong>{scheduleItem.subjectName}</strong> <br />
           {scheduleItem.room} <br />
+          G:{scheduleItem.subjectCode} <br />
         </td>
       )
     }
 
-    // Si hay un horario en curso, no renderizar la celda vacía
     if (
       schedule.some(
         (item) =>

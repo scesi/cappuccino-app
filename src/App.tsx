@@ -24,7 +24,7 @@ const parseDay = (day: string): Day => {
 
 /**
  * Combina y transforma los datos de horarios de las materias para generar una lista plana
- * de objetos `Schedule` con el nombre y el código de la materia.
+ * de objetos `Schedule` con el nombre, aula y el código de la materia.
  *
  * Esta función hace lo siguiente:
  * 1. Itera sobre la lista de materias (`subjects`).
@@ -41,7 +41,7 @@ const combinedSchedule = subjects.flatMap(subject =>
       ...scheduleItem,
       day: parseDay(scheduleItem.day),
       subjectName: subject.name,
-      subjectCode: subject.code,
+      subjectCode: group.code,
     }))
   )
 )
@@ -49,7 +49,7 @@ const combinedSchedule = subjects.flatMap(subject =>
 function App() {
   return (
     <div className="App">
-      <h1>Schedule</h1>
+      <h1>Horario</h1>
       <ScheduleTable schedule={combinedSchedule} />
     </div>
   )
