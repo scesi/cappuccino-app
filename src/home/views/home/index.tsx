@@ -1,6 +1,6 @@
-import { SearchBar } from '../../../shared/ui/search-bar/search-bar'
-import { HeroSection } from '../../components/hero-section/hero-section'
-import { LinkCard } from '../../components/link-card/link-card'
+import { HeroSection, LinkCard } from '@/home/components'
+
+import { SearchBar } from '@/shared/ui'
 
 import styles from './home-page.module.css'
 

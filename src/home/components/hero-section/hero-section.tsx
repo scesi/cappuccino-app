@@ -1,4 +1,4 @@
-import logoCappuchino from '../../../assets/logoCappuchino.svg'
+import logoCappuchino from '@/assets/logoCappuchino.svg'
 
 import styles from './hero-section.module.css'
 
