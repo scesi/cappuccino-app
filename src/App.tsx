@@ -1,13 +1,11 @@
-import './App.css'
-import './styles/normalize.css'
-import Header from './components/Header/Header'
-import Homepage from './views/Home'
+import { Header } from './shared/ui/header/header'
+import { HomePage } from './home/views/home'
 
 function App() {
   return (
     <>
       <Header />
-      <Homepage />
+      <HomePage />
     </>
   )
 }

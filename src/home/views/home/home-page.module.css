@@ -1,13 +1,3 @@
-.logoCappuchino {
-  width: 3rem;
-  height: 3rem;
-  margin-block: 20px;
-}
-
-.heroSection {
-  margin-top: 30px;
-}
-
 .careers {
   display: flex;
   flex-direction: column;
