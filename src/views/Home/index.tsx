@@ -7,8 +7,8 @@ import styles from './Homepage.module.css'
 const Homepage = () => {
   return (
     <>
-      <section className={styles.welcome}>
-        <h2 className={styles.subtitle2}>
+      <section className={styles.heroSection}>
+        <h2 className="subtitle-2">
           ¡Ponte cómodo y arma tu horario con un cappuchino!
         </h2>
         <img

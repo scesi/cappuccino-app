@@ -4,15 +4,15 @@
   margin-block: 20px;
 }
 
-.welcome {
+.heroSection {
   margin-top: 30px;
 }
 
 .careers {
   display: flex;
   flex-direction: column;
+  margin-block: 20px;
   padding-inline: 20px;
-  margin-top: 20px;
   font-size: 12px;
   font-weight: 200;
   gap: 10px;
