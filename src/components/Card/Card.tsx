@@ -1,9 +1,10 @@
 import arrowIcon from '../../assets/arrowIcon.svg'
 
-import './Card.css'
+import styles from './Card.module.css'
+
 const Card = ({ title }: { title: string }) => {
   return (
-    <section className="card">
+    <section className={styles.card}>
       <h3>{title}</h3>
       <img src={arrowIcon} alt="Arrow icon" />
     </section>

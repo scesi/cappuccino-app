@@ -1,7 +1,7 @@
 import './App.css'
 import './styles/normalize.css'
 import Header from './components/Header/Header'
-import Homepage from './views/Homepage/Homepage'
+import Homepage from './views/Home'
 
 function App() {
   return (

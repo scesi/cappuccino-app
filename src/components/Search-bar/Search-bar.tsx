@@ -1,16 +1,13 @@
-import searchIcon from '../../assets/searchIcon.svg'
 
-import './Search-bar.css'
 
-const SearchBar = ({ title }: { title: string }) => {
+import styles from './Search-bar.module.css'
+
+const Searchbar = ({ title }: { title: string }) => {
   return (
-    <div className="searchbar">
-      <input type="text" placeholder={title} />
-      <button className="searchicon">
-        <img src={searchIcon} alt="Search icon" />
-      </button>
+    <div className={styles.searchbar}>
+      <input className={styles.input} type="text" placeholder={title}/>
     </div>
   )
 }
 
-export default SearchBar
+export default Searchbar

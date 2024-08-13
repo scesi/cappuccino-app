@@ -1,14 +1,14 @@
-import ThreeDots from '../Three-dots/Three-dots'
-
 import logoSCESI from '../../assets/logoSCESI-Normal.svg'
-import './Header.css'
+import threedots from '../../assets/threedots.svg'
+
+import styles from './Header.module.css'
 
 const Header = () => {
   return (
-    <header>
-      <img className="logoscesi" src={logoSCESI} alt="logo scesi" />
-      <h1 className="title">CAPPUCHINO</h1>
-      <ThreeDots></ThreeDots>
+    <header className='header'>
+      <img className={styles.logoscesi} src={logoSCESI} alt="logo scesi" />
+      <h1 className={styles.title}>CAPPUCHINO</h1>
+      <img src={threedots} alt="threeDotsbutton" className={styles.threedots} />
     </header>
   )
 }

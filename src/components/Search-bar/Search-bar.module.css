@@ -19,3 +19,9 @@
   background: none;
   padding: 10px;
 }
+
+.input {
+  background-image: url("../../assets/searchIcon.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
