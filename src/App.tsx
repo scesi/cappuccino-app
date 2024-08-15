@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { NavBar } from './ui/NavBar/NavBottomBar'
-import { MoreOptions } from './ui/NavBar/more-options/more-options'
+import { DropdownOptions } from './ui/NavBar/dropdown-options/dropdown-options'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -36,14 +36,13 @@ function App() {
       ipsum dolor sit, amet consectetur adipisicing elit. Nemo inventore
       doloremque dolor hic neque eligendi repellendus eum blanditiis deserunt
       cumque omnis libero consectetur tempora, quam temporibus. Saepe esse
-      delectus laboriosam.
-      recusandae tenetur eius, vero at eum voluptates obcaecati accusantium
-      cupiditate sit commodi incidunt inventore debitis vel enim fugiat Lorem
-      ipsum dolor sit, amet consectetur adipisicing elit. Nemo inventore
-      doloremque dolor hic neque eligendi repellendus eum blanditiis deserunt
-      cumque omnis libero consectetur tempora, quam temporibus. Saepe esse
-      delectus laboriosam.
-      <MoreOptions />
+      delectus laboriosam. recusandae tenetur eius, vero at eum voluptates
+      obcaecati accusantium cupiditate sit commodi incidunt inventore debitis
+      vel enim fugiat Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Nemo inventore doloremque dolor hic neque eligendi repellendus eum
+      blanditiis deserunt cumque omnis libero consectetur tempora, quam
+      temporibus. Saepe esse delectus laboriosam.
+      <DropdownOptions />
       <NavBar />
     </>
   )
