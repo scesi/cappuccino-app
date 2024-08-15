@@ -4,7 +4,7 @@ import IconHorario from '../../assets/Icons/icon-horario.png'
 import IconMas from '../../assets/Icons/icon-mas.png'
 import IconHorarioActive from '../../assets/Icons/icon-horario-active.png'
 import IconMasActive from '../../assets/Icons/icon-mas-active.png'
-import './NavBar.css'
+import './NavBottomBar.css'
 
 const NavBar = () => {
   const [activeButtonIndex, setActiveButtonIndex] = useState<number | null>(
