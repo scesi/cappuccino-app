@@ -7,6 +7,17 @@ import SvgMore from './IconsSvg/more.svg'
 import SvgSchedulesActive from './IconsSvg/schedules-active.svg'
 import SvgMoreActive from './IconsSvg/more-active.svg'
 
+const buttons = [
+  { id: 0, label: 'Careers', icon: SvgCareers, activeIcon: SvgCareers },
+  {
+    id: 1,
+    label: 'Schedules',
+    icon: SvgSchedules,
+    activeIcon: SvgSchedulesActive,
+  },
+  { id: 2, label: 'More', icon: SvgMore, activeIcon: SvgMoreActive },
+]
+
 const NavBar = () => {
   const [activeButtonIndex, setActiveButtonIndex] = useState<number | null>(
     null,
@@ -19,33 +30,23 @@ const NavBar = () => {
   return (
     <div className="nav-bar">
       <div className="nav-buttons bg-green-300">
-        <button
-          className={`button-icon ${activeButtonIndex === 0 ? 'active' : ''}`}
-          onClick={() => handleButtonClick(0)}
-        >
-          <img src={SvgCareers} alt="carreras option" />
-          <span>Carreras</span>
-        </button>
-        <button
-          className={`button-icon ${activeButtonIndex === 1 ? 'active' : ''}`}
-          onClick={() => handleButtonClick(1)}
-        >
-          <img
-            src={activeButtonIndex === 1 ? SvgSchedulesActive : SvgSchedules}
-            alt="icon description"
-          />
-          <span>Horario</span>
-        </button>
-        <button
-          className={`button-icon ${activeButtonIndex === 2 ? 'active' : ''}`}
-          onClick={() => handleButtonClick(2)}
-        >
-          <img
-            src={activeButtonIndex === 2 ? SvgMoreActive : SvgMore}
-            alt="icon description"
-          />
-          <span>M&aacute;s</span>
-        </button>
+        {buttons.map((button) => (
+          <button
+            key={button.id}
+            className={`button-icon ${activeButtonIndex === button.id ? 'active' : ''}`}
+            onClick={() => handleButtonClick(button.id)}
+          >
+            <img
+              src={
+                activeButtonIndex === button.id
+                  ? button.activeIcon
+                  : button.icon
+              }
+              alt={`${button.label} icon`}
+            />
+            <span>{button.label}</span>
+          </button>
+        ))}
       </div>
     </div>
   )
