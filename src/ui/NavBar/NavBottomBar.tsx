@@ -1,24 +1,24 @@
 import { useState } from 'react'
 import './NavBottomBar.css'
 
-import SvgCareers from './IconsSvg/careers.svg'
-import SvgSchedules from './IconsSvg/schedules.svg'
-import SvgMore from './IconsSvg/more.svg'
-import SvgSchedulesActive from './IconsSvg/schedules-active.svg'
-import SvgMoreActive from './IconsSvg/more-active.svg'
+import SvgCareers from './icons-svg/careers.svg'
+import SvgSchedules from './icons-svg/schedules.svg'
+import SvgMore from './icons-svg/more.svg'
+import SvgSchedulesActive from './icons-svg/schedules-active.svg'
+import SvgMoreActive from './icons-svg/more-active.svg'
 
 const buttons = [
-  { id: 0, label: 'Careers', icon: SvgCareers, activeIcon: SvgCareers },
+  { id: 0, label: 'Carrerras', icon: SvgCareers, activeIcon: SvgCareers },
   {
     id: 1,
-    label: 'Schedules',
+    label: 'Horario',
     icon: SvgSchedules,
     activeIcon: SvgSchedulesActive,
   },
-  { id: 2, label: 'More', icon: SvgMore, activeIcon: SvgMoreActive },
+  { id: 2, label: 'Más', icon: SvgMore, activeIcon: SvgMoreActive },
 ]
 
-const NavBar = () => {
+export const NavBar = () => {
   const [activeButtonIndex, setActiveButtonIndex] = useState<number | null>(
     null,
   )
@@ -29,7 +29,7 @@ const NavBar = () => {
 
   return (
     <div className="nav-bar">
-      <div className="nav-buttons bg-green-300">
+      <div className="nav-buttons">
         {buttons.map((button) => (
           <button
             key={button.id}
@@ -51,5 +51,3 @@ const NavBar = () => {
     </div>
   )
 }
-
-export default NavBar

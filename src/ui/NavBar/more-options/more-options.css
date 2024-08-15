@@ -1,0 +1,35 @@
+.more-options {
+  right: 0;
+  left: 0;
+  position: fixed;
+  bottom: 58px;
+  background-color: #ffff;
+  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.25);
+  text-align: end;
+  z-index: 1000;
+  border-radius: 10px 10px 0 0;
+}
+
+.more-options-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  margin-right: 30px;
+}
+
+.more-icon-button {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.icon {
+  font-size: 20px;
+  color: #000;
+  margin-right: 20px;
+}
+
+.button-icon-more {
+  height: 100%;
+  margin-left: 12px;
+}

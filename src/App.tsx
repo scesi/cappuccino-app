@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import NavBar from './ui/NavBar/NavBottomBar'
+import { NavBar } from './ui/NavBar/NavBottomBar'
+import { MoreOptions } from './ui/NavBar/more-options/more-options'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,7 +19,6 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -30,6 +30,20 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem
+      recusandae tenetur eius, vero at eum voluptates obcaecati accusantium
+      cupiditate sit commodi incidunt inventore debitis vel enim fugiat Lorem
+      ipsum dolor sit, amet consectetur adipisicing elit. Nemo inventore
+      doloremque dolor hic neque eligendi repellendus eum blanditiis deserunt
+      cumque omnis libero consectetur tempora, quam temporibus. Saepe esse
+      delectus laboriosam.
+      recusandae tenetur eius, vero at eum voluptates obcaecati accusantium
+      cupiditate sit commodi incidunt inventore debitis vel enim fugiat Lorem
+      ipsum dolor sit, amet consectetur adipisicing elit. Nemo inventore
+      doloremque dolor hic neque eligendi repellendus eum blanditiis deserunt
+      cumque omnis libero consectetur tempora, quam temporibus. Saepe esse
+      delectus laboriosam.
+      <MoreOptions />
       <NavBar />
     </>
   )
