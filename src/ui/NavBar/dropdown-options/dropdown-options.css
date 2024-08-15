@@ -21,6 +21,7 @@
 
 .dropdown-option {
   display: flex;
+  align-items: center;
   font-size: 14px;
   font-weight: 700;
 }
@@ -32,6 +33,7 @@
   border: 0;
   background: #d7dbff;
   border-radius: 50%;
-  height: 100%;
+  width: 30px;
+  height: 30px;
   margin-left: 12px;
 }
