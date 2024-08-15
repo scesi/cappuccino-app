@@ -6,7 +6,7 @@
   background-color: #ffff;
   box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.25);
   text-align: end;
-  z-index: 1000;
+  z-index: 200;
   border-radius: 10px 10px 0 0;
 }
 
@@ -20,6 +20,7 @@
 }
 
 .dropdown-option {
+  color: black;
   display: flex;
   align-items: center;
   font-size: 14px;

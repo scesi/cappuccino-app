@@ -2,8 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { NavBar } from './ui/NavBar/NavBottomBar'
-import { DropdownOptions } from './ui/NavBar/dropdown-options/dropdown-options'
+import { NavBar } from './ui/NavBar/nav-bottom-bar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -42,7 +41,6 @@ function App() {
       Nemo inventore doloremque dolor hic neque eligendi repellendus eum
       blanditiis deserunt cumque omnis libero consectetur tempora, quam
       temporibus. Saepe esse delectus laboriosam.
-      <DropdownOptions />
       <NavBar />
     </>
   )
