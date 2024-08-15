@@ -9,28 +9,48 @@ import SvgMoreActive from './icons-svg/more-active.svg'
 import { DropdownOptions } from './dropdown-options/dropdown-options'
 
 const buttons = [
-  { id: 0, label: 'Carrerras', icon: SvgCareers, activeIcon: SvgCareers },
+  {
+    id: 0,
+    label: 'Carrerras',
+    icon: SvgCareers,
+    activeIcon: SvgCareers,
+  },
   {
     id: 1,
     label: 'Horario',
     icon: SvgSchedules,
     activeIcon: SvgSchedulesActive,
   },
-  { id: 2, label: 'Más', icon: SvgMore, activeIcon: SvgMoreActive },
+  {
+    id: 2,
+    label: 'Más',
+    icon: SvgMore,
+    activeIcon: SvgMoreActive,
+  },
 ]
 
 export const NavBar = () => {
   const [activeButtonIndex, setActiveButtonIndex] = useState<number | null>(
     null,
   )
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prevState) => !prevState)
+  }
 
   const handleButtonClick = (index: number) => {
     setActiveButtonIndex(index)
+    if (index === 2) {
+      toggleDropdown()
+    } else {
+      setIsDropdownOpen(false)
+    }
   }
 
   return (
     <div className="nav-bar-options">
-      <DropdownOptions />
+      {isDropdownOpen && <DropdownOptions />}
       <div className="nav-bar-bottom">
         <div className="nav-buttons">
           {buttons.map((button) => (

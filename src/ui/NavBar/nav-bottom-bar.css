@@ -12,7 +12,6 @@
 }
 
 .nav-buttons {
-  margin-top: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,6 +19,7 @@
 }
 
 .button-icon {
+  padding-top: 4px;
   height: 100%;
   font-size: 12px;
   display: flex;
