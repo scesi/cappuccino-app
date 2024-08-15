@@ -52,7 +52,7 @@ button:focus-visible {
 }
 
 .dropdown-enter-active {
-  opacity: 1; 
+  opacity: 1;
   transition:
     opacity 500ms,
     transform 500ms;

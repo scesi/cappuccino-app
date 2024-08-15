@@ -3,34 +3,38 @@ import SvgPlusCircle from '../icons-svg/plus-circle.svg'
 import SvgTrash from '../icons-svg/trash.svg'
 import './dropdown-options.css'
 
+const dropdownOptions = [
+  {
+    id: 0,
+    label: 'Añadir al Calendario de Google',
+    icon: SvgCalendarGoogle,
+  },
+  {
+    id: 1,
+    label: 'Agregar carrera',
+    icon: SvgPlusCircle,
+  },
+  {
+    id: 2,
+    label: 'Eliminar materias seleccionadas',
+    icon: SvgTrash,
+  },
+]
+
 export const DropdownOptions = () => {
   return (
     <div className="dropdown-options">
       <div className="dropdown-options-body">
-        <div className="dropdown-option">
-          Añadir al Calendario de Google
-          <span>
-            <button className="dropdown-button">
-              <img src={SvgCalendarGoogle} alt="calendar google icon" />
-            </button>
-          </span>
-        </div>
-        <div className="dropdown-option">
-          Agregar carrera
-          <span>
-            <button className="dropdown-button">
-              <img src={SvgPlusCircle} alt="plus circle icon" />
-            </button>
-          </span>
-        </div>
-        <div className="dropdown-option">
-          Eliminar materias seleccionadas
-          <span>
-            <button className="dropdown-button">
-              <img src={SvgTrash} alt="trash icon" />
-            </button>
-          </span>
-        </div>
+        {dropdownOptions.map((option) => (
+          <div key={option.id} className="dropdown-option">
+            {option.label}
+            <span>
+              <button className="dropdown-button">
+                <img src={option.icon} alt="icon" />
+              </button>
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   )
