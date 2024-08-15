@@ -50,7 +50,11 @@ export const NavBar = () => {
 
   return (
     <div className="nav-bar-options">
-      {isDropdownOpen && <DropdownOptions />}
+      <div
+        className={`dropdown-container ${isDropdownOpen ? 'dropdown-enter-active' : 'dropdown-exit-active'}`}
+      >
+        {isDropdownOpen && <DropdownOptions />}
+      </div>
       <div className="nav-bar-bottom">
         <div className="nav-buttons">
           {buttons.map((button) => (
