@@ -1,4 +1,6 @@
 .nav-bar {
+  right: 0;
+  left: 0;
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -10,6 +12,7 @@
 }
 
 .nav-buttons {
+  margin-top: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +21,7 @@
 
 .button-icon {
   height: 100%;
-  font-size: 8px;
+  font-size: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
