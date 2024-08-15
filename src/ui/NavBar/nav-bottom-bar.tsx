@@ -8,7 +8,14 @@ import SvgSchedulesActive from './icons-svg/schedules-active.svg'
 import SvgMoreActive from './icons-svg/more-active.svg'
 import { DropdownOptions } from './dropdown-options/dropdown-options'
 
-const buttons = [
+interface Button {
+  id: number
+  label: string
+  icon: string
+  activeIcon: string
+}
+
+const buttons: Button[] = [
   {
     id: 0,
     label: 'Carrerras',
