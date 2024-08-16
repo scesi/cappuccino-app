@@ -1,29 +1,31 @@
-import SvgCalendarGoogle from '../icons-svg/google-calendar.svg'
-import SvgPlusCircle from '../icons-svg/plus-circle.svg'
-import SvgTrash from '../icons-svg/trash.svg'
+import { SVGProps } from 'react'
+import { CalendarIcon } from '../../../shared/ui/icons/google-calendar'
+import { PlusCircleIcon } from '../../../shared/ui/icons/plus-circle'
+import { TrashIcon } from '../../../shared/ui/icons/trash'
+
 import './dropdown-options.css'
 
 interface DropdownOption {
   id: number
   label: string
-  icon: string
+  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element
 }
 
 const options: DropdownOption[] = [
   {
     id: 0,
     label: 'Añadir al Calendario de Google',
-    icon: SvgCalendarGoogle,
+    icon: CalendarIcon,
   },
   {
     id: 1,
     label: 'Agregar carrera',
-    icon: SvgPlusCircle,
+    icon: PlusCircleIcon,
   },
   {
     id: 2,
     label: 'Eliminar materias seleccionadas',
-    icon: SvgTrash,
+    icon: TrashIcon,
   },
 ]
 
@@ -36,7 +38,7 @@ export const DropdownOptions = () => {
             {option.label}
             <span>
               <button className="dropdown-button">
-                <img src={option.icon} alt="icon" />
+                <option.icon />
               </button>
             </span>
           </div>

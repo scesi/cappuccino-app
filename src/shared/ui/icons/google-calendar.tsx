@@ -1,8 +1,8 @@
 import { SVGProps } from 'react'
 
-type Props = SVGProps<SVGSVGElement>
+interface SVGComponentProps extends SVGProps<SVGSVGElement> {}
 
-export const CalendarIcon = (props: Props) => (
+export const CalendarIcon = (props: SVGComponentProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={18}

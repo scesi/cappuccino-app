@@ -1,38 +1,36 @@
 import { useState } from 'react'
-import './nav-bottom-bar.css'
-
-import SvgCareers from './icons-svg/careers.svg'
-import SvgSchedules from './icons-svg/schedules.svg'
-import SvgMore from './icons-svg/more.svg'
-import SvgSchedulesActive from './icons-svg/schedules-active.svg'
-import SvgMoreActive from './icons-svg/more-active.svg'
+import { BookIcon } from '../../shared/ui/icons/careers'
+import { CalendarEditIcon } from '../../shared/ui/icons/schedules'
+import { CoffeIcon } from '../../shared/ui/icons/more'
+import { CoffeeIconFull } from '../../shared/ui/icons/more-active'
+import { CalendarEditIconActive } from '../../shared/ui/icons/schedules-active'
 import { DropdownOptions } from './dropdown-options/dropdown-options'
-
+import './nav-bottom-bar.css'
 interface Button {
   id: number
   label: string
-  icon: string
-  activeIcon: string
+  icon: any
+  activeIcon: any
 }
 
 const buttons: Button[] = [
   {
     id: 0,
     label: 'Carrerras',
-    icon: SvgCareers,
-    activeIcon: SvgCareers,
+    icon: BookIcon,
+    activeIcon: BookIcon,
   },
   {
     id: 1,
     label: 'Horario',
-    icon: SvgSchedules,
-    activeIcon: SvgSchedulesActive,
+    icon: CalendarEditIcon,
+    activeIcon: CalendarEditIconActive,
   },
   {
     id: 2,
     label: 'Más',
-    icon: SvgMore,
-    activeIcon: SvgMoreActive,
+    icon: CoffeIcon,
+    activeIcon: CoffeeIconFull,
   },
 ]
 
