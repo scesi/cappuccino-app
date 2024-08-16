@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { SVGProps, useState } from 'react'
 import { BookIcon } from '../../shared/ui/icons/careers'
 import { CalendarEditIcon } from '../../shared/ui/icons/schedules'
 import { CoffeIcon } from '../../shared/ui/icons/more'
@@ -9,8 +9,8 @@ import './nav-bottom-bar.css'
 interface Button {
   id: number
   label: string
-  icon: any
-  activeIcon: any
+  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element
+  activeIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element
 }
 
 const buttons: Button[] = [
@@ -68,14 +68,9 @@ export const NavBar = () => {
               className={`button-icon ${activeButtonIndex === button.id ? 'active' : ''}`}
               onClick={() => handleButtonClick(button.id)}
             >
-              <img
-                src={
-                  activeButtonIndex === button.id
-                    ? button.activeIcon
-                    : button.icon
-                }
-                alt={`${button.label} icon`}
-              />
+              {activeButtonIndex === button.id
+                ? button.activeIcon({ fill: '#000' })
+                : button.icon({ fill: '#000' })}
               <span>{button.label}</span>
             </button>
           ))}
