@@ -1,10 +1,10 @@
 import { SVGProps, useState } from 'react'
+import { DropdownOptions } from './dropdown-options/dropdown-options'
 import { BookIcon } from '../../shared/ui/icons/careers'
 import { CalendarEditIcon } from '../../shared/ui/icons/schedules'
 import { CoffeIcon } from '../../shared/ui/icons/more'
 import { CoffeeIconFull } from '../../shared/ui/icons/more-active'
 import { CalendarEditIconActive } from '../../shared/ui/icons/schedules-active'
-import { DropdownOptions } from './dropdown-options/dropdown-options'
 import './nav-bottom-bar.css'
 interface Button {
   id: number
