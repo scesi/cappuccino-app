@@ -42,7 +42,7 @@ export const ScheduleTable = ({ schedule }: Props) => {
   )
 
   useEffect(() => {
-    const intermediateHours = hours.filter((hour, idx) => idx % 2 !== 0)
+    const intermediateHours = hours.filter((_, idx) => idx % 2 !== 0)
     const hoursSet = new Set<string>()
 
     schedule.forEach((item) => {
@@ -57,7 +57,7 @@ export const ScheduleTable = ({ schedule }: Props) => {
         }
       })
     })
-  }, [schedule, hours])
+  }, [schedule])
 
   const renderSchedule = (day: Day, hour: string, hourIndex: number) => {
     const scheduleItem = schedule.find(
