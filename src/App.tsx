@@ -1,12 +1,15 @@
 import { combinedSchedule } from './shared/ui'
 import { ScheduleTable } from './shared/ui'
+import { Header } from './shared/ui/header/header'
+import { HomePage } from './home/views/home'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Horario</h1>
+    <>
+      <Header />
       <ScheduleTable schedule={combinedSchedule} />
-    </div>
+      <HomePage />
+    </>
   )
 }
 

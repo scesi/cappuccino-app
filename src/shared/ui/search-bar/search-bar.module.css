@@ -1,0 +1,27 @@
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding-inline: 5px;
+}
+
+.searchbar input {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.searchicon {
+  border: none;
+  background: none;
+  padding: 10px;
+}
+
+.input {
+  background-image: url('@/assets/searchIcon.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+}
