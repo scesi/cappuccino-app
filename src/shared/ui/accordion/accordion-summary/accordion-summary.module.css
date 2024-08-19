@@ -13,4 +13,15 @@
   padding: 0;
   margin: 0;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.expandIcon {
+  transition: all 220ms ease-in-out;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }

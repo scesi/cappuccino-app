@@ -6,14 +6,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 
   & .semesterName {
     margin: 0;
     font-size: 12px;
-  }
-
-  & .semesterArrowIcon {
-    transform: rotate(90deg);
   }
 }
 

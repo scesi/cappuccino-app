@@ -13,25 +13,24 @@ export function SemesterAccordion({
 }: SemesterAccordionProps) {
   return (
     <Accordion>
-      <AccordionSummary>
-        <div className={styles.semesterAccordion}>
-          <h3 className={styles.semesterName}>{semester.name}</h3>
-
-          <span className={styles.semesterArrowIcon}>
-            <svg
-              width="26"
-              height="24"
-              viewBox="0 0 26 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.4876 17.707L17.597 12L11.4876 6.29297L9.97388 7.70697L14.5696 12L9.97388 16.293L11.4876 17.707Z"
-                fill="black"
-              />
-            </svg>
-          </span>
-        </div>
+      <AccordionSummary
+        expandIcon={
+          <svg
+            width="13"
+            height="8"
+            viewBox="0 0 13 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.43 0.292969L6.82052 4.58597L2.21105 0.292969L0.69281 1.70697L6.82052 7.41397L12.9482 1.70697L11.43 0.292969Z"
+              fill="black"
+            />
+          </svg>
+        }
+        className={styles.semesterAccordion}
+      >
+        <h3 className={styles.semesterName}>{semester.name}</h3>
       </AccordionSummary>
 
       <AccordionDetails>
