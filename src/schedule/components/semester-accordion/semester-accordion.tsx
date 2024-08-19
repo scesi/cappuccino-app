@@ -4,9 +4,9 @@ import {
   AccordionSummary,
 } from '@/shared/ui/accordion'
 import { SemesterAccordionProps } from './semester-accordion-props.interface'
+import { SubjectAccordion } from '../subject-accordion/subject-accordion'
 
 import styles from './semester-accordion.module.css'
-import { SubjectAccordion } from '../subject-accordion/subject-accordion'
 
 export function SemesterAccordion({ semester }: SemesterAccordionProps) {
   return (

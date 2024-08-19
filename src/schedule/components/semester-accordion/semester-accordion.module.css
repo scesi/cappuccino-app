@@ -27,4 +27,13 @@
     border-left: 1.5px solid #d7dbff;
     gap: 10px;
   }
+
+  & .semesterArrowIcon {
+    transform: rotate(90deg);
+  }
+}
+
+.semesterAccordionSubjects {
+  display: flex;
+  flex-direction: column;
 }
