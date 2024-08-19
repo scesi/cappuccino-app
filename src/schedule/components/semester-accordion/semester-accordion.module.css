@@ -1,0 +1,23 @@
+.semesterAccordion {
+  background-color: #d7dbff;
+  margin: 0;
+  padding: 0.7rem;
+  border-radius: 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .semesterName {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  & .semesterArrowIcon {
+    transform: rotate(90deg);
+  }
+}
+
+.semesterAccordionSubjects {
+  display: flex;
+  flex-direction: column;
+}
