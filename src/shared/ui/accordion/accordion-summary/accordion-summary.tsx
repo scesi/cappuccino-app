@@ -25,6 +25,8 @@ export function AccordionSummary({
             </div>
           )}
         </div>
+
+        {children}
       </button>
     </section>
   )
