@@ -31,11 +31,11 @@ const options: DropdownOption[] = [
 export const DropdownOptions = () => {
   return (
     <div className={style.dropdownOptions}>
-      <div className={style.dropdownOptionsBody}>
+      <div className={style.body}>
         {options.map((option) => (
-          <button key={option.id} className={style.dropdownOption}>
+          <button key={option.id} className={style.buttonOption}>
             {option.label}
-            <span className={style.dropdownButton}>
+            <span className={style.icon}>
               <option.icon />
             </span>
           </button>
