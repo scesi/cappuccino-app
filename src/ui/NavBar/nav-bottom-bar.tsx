@@ -5,7 +5,7 @@ import { CalendarEditIcon } from '../../shared/ui/icons/schedules'
 import { CoffeIcon } from '../../shared/ui/icons/more'
 import { CoffeeIconFull } from '../../shared/ui/icons/more-active'
 import { CalendarEditIconActive } from '../../shared/ui/icons/schedules-active'
-import './nav-bottom-bar.css'
+import style from './nav-bottom-bar.module.css'
 interface Button {
   id: number
   label: string
@@ -54,18 +54,18 @@ export const NavBar = () => {
   }
 
   return (
-    <div className="nav-bar-options">
+    <div>
       <div
-        className={`dropdown-container ${isDropdownOpen ? 'dropdown-enter-active' : 'dropdown-exit-active'}`}
+        className={`${isDropdownOpen ? style.dropdownEnter : style.DropdownExit}`}
       >
         {isDropdownOpen && <DropdownOptions />}
       </div>
-      <div className="nav-bar-bottom">
-        <div className="nav-buttons">
+      <div className={style.navBottomBar}>
+        <div className={style.buttons}>
           {buttons.map((button) => (
             <button
               key={button.id}
-              className={`button-icon ${activeButtonIndex === button.id ? 'active' : ''}`}
+              className={`${style.button} ${activeButtonIndex === button.id ? style.active : ''}`}
               onClick={() => handleButtonClick(button.id)}
             >
               {activeButtonIndex === button.id

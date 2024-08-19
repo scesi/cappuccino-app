@@ -1,4 +1,4 @@
-.nav-bar-bottom {
+.navBottomBar {
   right: 0;
   left: 0;
   position: fixed;
@@ -11,14 +11,14 @@
   box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.nav-buttons {
+.buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
 
-.button-icon {
+.button {
   padding-top: 4px;
   height: 100%;
   font-size: 12px;
@@ -51,14 +51,14 @@ button:focus-visible {
   color: black;
 }
 
-.dropdown-enter-active {
+.dropdownEnter {
   opacity: 1;
   transition:
     opacity 500ms,
     transform 500ms;
 }
 
-.dropdown-exit-active {
+.DropdownExit {
   opacity: 0;
   transition:
     opacity 300ms,
