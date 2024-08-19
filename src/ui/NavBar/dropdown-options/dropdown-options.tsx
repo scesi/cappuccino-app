@@ -28,19 +28,29 @@ const options: DropdownOption[] = [
   },
 ]
 
-export const DropdownOptions = () => {
+type DropdownOptionsProps = {
+  isDropdownOpen: boolean
+}
+
+export const DropdownOptions = ({
+  isDropdownOpen = true,
+}: DropdownOptionsProps) => {
   return (
-    <div className={style.dropdownOptions}>
-      <div className={style.body}>
-        {options.map((option) => (
-          <button key={option.id} className={style.buttonOption}>
-            {option.label}
-            <span className={style.icon}>
-              <option.icon />
-            </span>
-          </button>
-        ))}
-      </div>
+    <div>
+      {isDropdownOpen && (
+        <div className={style.dropdownOptions}>
+          <div className={style.body}>
+            {options.map((option) => (
+              <button key={option.id} className={style.buttonOption}>
+                {option.label}
+                <span className={style.icon}>
+                  <option.icon />
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

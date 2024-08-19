@@ -55,11 +55,7 @@ export const NavBar = () => {
 
   return (
     <div>
-      <div
-        className={`${isDropdownOpen ? style.dropdownEnter : style.DropdownExit}`}
-      >
-        {isDropdownOpen && <DropdownOptions />}
-      </div>
+      <DropdownOptions isDropdownOpen={isDropdownOpen} />
       <div className={style.navBottomBar}>
         <div className={style.buttons}>
           {buttons.map((button) => (
