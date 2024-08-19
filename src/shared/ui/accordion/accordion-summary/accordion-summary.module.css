@@ -1,6 +1,7 @@
 .accordionSummary {
   padding: 0;
   margin: 0;
+  background-color: transparent;
 }
 
 .accordionSummaryLabel {
@@ -8,6 +9,8 @@
   width: 100%;
   outline: none;
   cursor: pointer;
-  padding: 1rem;
   text-align: left;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
 }
