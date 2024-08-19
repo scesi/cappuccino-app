@@ -34,14 +34,12 @@ export const DropdownOptions = () => {
     <div className="dropdown-options">
       <div className="dropdown-options-body">
         {options.map((option) => (
-          <div key={option.id} className="dropdown-option">
+          <button key={option.id} className="dropdown-option">
             {option.label}
-            <span>
-              <button className="dropdown-button">
-                <option.icon />
-              </button>
+            <span className="dropdown-button">
+              <option.icon />
             </span>
-          </div>
+          </button>
         ))}
       </div>
     </div>
