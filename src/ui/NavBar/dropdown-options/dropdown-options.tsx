@@ -33,7 +33,7 @@ type DropdownOptionsProps = {
 }
 
 export const DropdownOptions = ({
-  isDropdownOpen = true,
+  isDropdownOpen = false,
 }: DropdownOptionsProps) => {
   return (
     <div>
