@@ -7,10 +7,7 @@ import { SemesterAccordionProps } from './semester-accordion-props.interface'
 
 import styles from './semester-accordion.module.css'
 
-export function SemesterAccordion({
-  semester,
-  borrar,
-}: SemesterAccordionProps) {
+export function SemesterAccordion({ semester }: SemesterAccordionProps) {
   return (
     <Accordion>
       <AccordionSummary
@@ -35,7 +32,7 @@ export function SemesterAccordion({
 
       <AccordionDetails>
         <section className={styles.semesterAccordionSubjects}>
-          <p>{borrar}</p>
+          <p>Content</p>
         </section>
       </AccordionDetails>
     </Accordion>
