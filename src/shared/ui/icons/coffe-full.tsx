@@ -2,7 +2,7 @@ import { SVGProps } from 'react'
 
 type Props = SVGProps<SVGSVGElement>
 
-export const CoffeeIconFull = (props: Props) => (
+export const CoffeeFull = (props: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={24}

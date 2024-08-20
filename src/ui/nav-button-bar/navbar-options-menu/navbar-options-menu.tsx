@@ -1,8 +1,8 @@
 import { SVGProps } from 'react'
 
-import { Calendar } from '../../../shared/ui/icons/calendar'
-import { PlusCircle } from '../../../shared/ui/icons/plus-circle'
-import { Trash } from '../../../shared/ui/icons/trash'
+import { CalendarIcon } from '../../../shared/ui/icons/calendar'
+import { PlusCircleIcon } from '../../../shared/ui/icons/plus-circle'
+import { TrashIcon } from '../../../shared/ui/icons/trash'
 
 import styles from './navbar-options-menu.module.css'
 
@@ -16,17 +16,17 @@ const options: NavbarOptionMenu[] = [
   {
     id: 0,
     label: 'Añadir al Calendario de Google',
-    icon: Calendar,
+    icon: CalendarIcon,
   },
   {
     id: 1,
     label: 'Agregar carrera',
-    icon: PlusCircle,
+    icon: PlusCircleIcon,
   },
   {
     id: 2,
     label: 'Eliminar materias seleccionadas',
-    icon: Trash,
+    icon: TrashIcon,
   },
 ]
 

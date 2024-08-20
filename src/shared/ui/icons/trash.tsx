@@ -2,7 +2,7 @@ import { SVGProps } from 'react'
 
 type Props = SVGProps<SVGSVGElement>
 
-export const TrashIcon = (props: Props) => (
+export const Trash = (props: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={18}

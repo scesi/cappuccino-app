@@ -2,7 +2,7 @@ import { SVGProps } from 'react'
 
 type Props = SVGProps<SVGSVGElement>
 
-export const CalendarEditIconActive = (props: Props) => (
+export const CalendarEditActive = (props: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={24}

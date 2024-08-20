@@ -2,7 +2,7 @@ import { SVGProps } from 'react'
 
 type Props = SVGProps<SVGSVGElement>
 
-export const PlusCircleIcon = (props: Props) => (
+export const PlusCircle = (props: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={18}
