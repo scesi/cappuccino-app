@@ -54,6 +54,7 @@ export const ScheduleTable = ({ schedule }: Props) => {
       )
       setIntermediateHoursToDisplay((prev) => prev.concat(newIntermediateHours))
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [schedule])
 
   return (
