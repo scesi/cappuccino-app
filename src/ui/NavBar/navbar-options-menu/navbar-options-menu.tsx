@@ -6,13 +6,13 @@ import { TrashIcon } from '../../../shared/ui/icons/trash'
 
 import styles from './navbar-options-menu.module.css'
 
-interface DropdownOption {
+interface NavbarOptionMenu {
   id: number
   label: string
   icon: (props: SVGProps<SVGSVGElement>) => JSX.Element
 }
 
-const options: DropdownOption[] = [
+const options: NavbarOptionMenu[] = [
   {
     id: 0,
     label: 'Añadir al Calendario de Google',
@@ -30,13 +30,13 @@ const options: DropdownOption[] = [
   },
 ]
 
-type DropdownOptionsProps = {
+type NavbarOptionsMenuProps = {
   isDropdownOpen: boolean
 }
 
-export const DropdownOptions = ({
+export const NavbarOptionsMenu = ({
   isDropdownOpen = false,
-}: DropdownOptionsProps) => {
+}: NavbarOptionsMenuProps) => {
   return (
     <div
       className={`${styles.dropdownOptions} ${isDropdownOpen ? styles.dropdownEnter : styles.dropdownExit}`}
