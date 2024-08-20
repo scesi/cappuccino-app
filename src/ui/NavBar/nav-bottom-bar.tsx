@@ -1,6 +1,6 @@
 import { SVGProps, useState } from 'react'
 
-import { DropdownOptions } from './dropdown-options/dropdown-options'
+import { DropdownOptions } from './dropdown-options/navbar-options-menu'
 import { BookIcon } from '../../shared/ui/icons/careers'
 import { CalendarEditIcon } from '../../shared/ui/icons/schedules'
 import { CoffeIcon } from '../../shared/ui/icons/more'

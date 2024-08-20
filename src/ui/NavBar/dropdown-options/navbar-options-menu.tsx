@@ -4,7 +4,7 @@ import { CalendarIcon } from '../../../shared/ui/icons/google-calendar'
 import { PlusCircleIcon } from '../../../shared/ui/icons/plus-circle'
 import { TrashIcon } from '../../../shared/ui/icons/trash'
 
-import styles from './dropdown-options.module.css'
+import styles from './navbar-options-menu.module.css'
 
 interface DropdownOption {
   id: number

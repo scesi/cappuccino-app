@@ -1,7 +1,9 @@
 import { useState } from 'react'
+
+import { NavBar } from './ui/navbar/nav-bottom-bar'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import { NavBar } from './ui/NavBar/nav-bottom-bar'
+
 import './App.css'
 
 function App() {
