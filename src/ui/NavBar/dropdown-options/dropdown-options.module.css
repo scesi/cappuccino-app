@@ -36,14 +36,14 @@
 }
 
 .buttonOption {
+  font-family: 'Poppins', sans-serif;
   text-align: end;
   width: 100%;
   color: black;
   display: flex;
   align-items: center;
   justify-content: end;
-  font-size: 14px;
-  /* font-weight: 700; */
+  font-size: 12px;
   border: 0;
   background-color: transparent;
 }
