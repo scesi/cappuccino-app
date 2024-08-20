@@ -1,5 +1,8 @@
 import { FC, useEffect } from 'react'
+
 import styles from '@/shared/ui/delete-modal/delete-modal.module.css'
+
+import trashIcon from '@/assets/trash-icon.svg'
 
 interface DeleteModalProps {
   accept: () => void
@@ -9,7 +12,7 @@ interface DeleteModalProps {
 export const DeleteModal: FC<DeleteModalProps> = ({ accept, close }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden'
-    
+
     return () => {
       document.body.style.overflow = 'auto'
     }
@@ -32,8 +35,12 @@ export const DeleteModal: FC<DeleteModalProps> = ({ accept, close }) => {
           e.stopPropagation
         }}
       >
-        <img src="" alt="" className={styles.modalIcon} />
-        <p className={styles.modalText}>¿Estás seguro de limpiar su horario?</p>
+        <div className={styles.modalTitle}>
+          <img src={trashIcon} alt="" className={styles.modalIcon} />
+          <p className={styles.modalText}>
+            ¿Estás seguro de limpiar su horario?
+          </p>
+        </div>
         <div className={styles.buttonsContainer}>
           <button className={styles.modalButtonAccept} onClick={handleClose}>
             Cancelar

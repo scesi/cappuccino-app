@@ -22,7 +22,14 @@
     border-radius: 10px;
 }
 
+.modalTitle {
+    display: flex;
+    padding-inline: 40px;
+}
 
+.modalIcon {
+    width: 50px;
+}
 
 .buttonsContainer {
     display: flex;
