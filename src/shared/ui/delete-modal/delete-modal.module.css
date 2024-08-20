@@ -14,7 +14,6 @@
 .deleteModal {
   display: flex;
   flex-direction: column;
-  padding-inline: 10px;
   padding-block: 20px;
   width: 300px;
   background-color: white;
