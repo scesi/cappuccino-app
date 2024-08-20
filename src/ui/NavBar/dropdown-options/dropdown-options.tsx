@@ -36,21 +36,19 @@ export const DropdownOptions = ({
   isDropdownOpen = false,
 }: DropdownOptionsProps) => {
   return (
-    <div>
-      {isDropdownOpen && (
-        <div className={style.dropdownOptions}>
-          <div className={style.body}>
-            {options.map((option) => (
-              <button key={option.id} className={style.buttonOption}>
-                {option.label}
-                <span className={style.icon}>
-                  <option.icon />
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+    <div
+      className={`${style.dropdownOptions} ${isDropdownOpen ? style.dropdownEnter : style.dropdownExit}`}
+    >
+      <div className={style.body}>
+        {options.map((option) => (
+          <button key={option.id} className={style.buttonOption}>
+            {option.label}
+            <span className={style.icon}>
+              <option.icon />
+            </span>
+          </button>
+        ))}
+      </div>
     </div>
   )
 }

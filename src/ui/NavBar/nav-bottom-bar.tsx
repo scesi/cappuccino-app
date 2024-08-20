@@ -6,6 +6,7 @@ import { CoffeIcon } from '../../shared/ui/icons/more'
 import { CoffeeIconFull } from '../../shared/ui/icons/more-active'
 import { CalendarEditIconActive } from '../../shared/ui/icons/schedules-active'
 import style from './nav-bottom-bar.module.css'
+
 interface Button {
   id: number
   label: string
@@ -55,7 +56,6 @@ export const NavBar = () => {
 
   return (
     <div>
-      <DropdownOptions isDropdownOpen={isDropdownOpen} />
       <div className={style.navBottomBar}>
         <div className={style.buttons}>
           {buttons.map((button) => (
@@ -72,6 +72,7 @@ export const NavBar = () => {
           ))}
         </div>
       </div>
+      <DropdownOptions isDropdownOpen={isDropdownOpen} />
     </div>
   )
 }
