@@ -1,8 +1,10 @@
 import { SVGProps } from 'react'
+
 import { CalendarIcon } from '../../../shared/ui/icons/google-calendar'
 import { PlusCircleIcon } from '../../../shared/ui/icons/plus-circle'
 import { TrashIcon } from '../../../shared/ui/icons/trash'
-import style from './dropdown-options.module.css'
+
+import styles from './dropdown-options.module.css'
 
 interface DropdownOption {
   id: number
@@ -37,13 +39,13 @@ export const DropdownOptions = ({
 }: DropdownOptionsProps) => {
   return (
     <div
-      className={`${style.dropdownOptions} ${isDropdownOpen ? style.dropdownEnter : style.dropdownExit}`}
+      className={`${styles.dropdownOptions} ${isDropdownOpen ? styles.dropdownEnter : styles.dropdownExit}`}
     >
-      <div className={style.body}>
+      <div className={styles.body}>
         {options.map((option) => (
-          <button key={option.id} className={style.buttonOption}>
+          <button key={option.id} className={styles.buttonOption}>
             {option.label}
-            <span className={style.icon}>
+            <span className={styles.icon}>
               <option.icon />
             </span>
           </button>

@@ -1,11 +1,13 @@
 import { SVGProps, useState } from 'react'
+
 import { DropdownOptions } from './dropdown-options/dropdown-options'
 import { BookIcon } from '../../shared/ui/icons/careers'
 import { CalendarEditIcon } from '../../shared/ui/icons/schedules'
 import { CoffeIcon } from '../../shared/ui/icons/more'
 import { CoffeeIconFull } from '../../shared/ui/icons/more-active'
 import { CalendarEditIconActive } from '../../shared/ui/icons/schedules-active'
-import style from './nav-bottom-bar.module.css'
+
+import styles from './nav-bottom-bar.module.css'
 
 interface Button {
   id: number
@@ -56,12 +58,12 @@ export const NavBar = () => {
 
   return (
     <div>
-      <div className={style.navBottomBar}>
-        <div className={style.buttons}>
+      <div className={styles.navBottomBar}>
+        <div className={styles.buttons}>
           {buttons.map((button) => (
             <button
               key={button.id}
-              className={`${style.button} ${activeButtonIndex === button.id ? style.active : ''}`}
+              className={`${styles.button} ${activeButtonIndex === button.id ? styles.active : ''}`}
               onClick={() => handleButtonClick(button.id)}
             >
               {activeButtonIndex === button.id
