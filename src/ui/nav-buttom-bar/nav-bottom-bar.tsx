@@ -1,11 +1,11 @@
 import { SVGProps, useState } from 'react'
 
 import { NavbarOptionsMenu } from './navbar-options-menu/navbar-options-menu'
-import { Book } from '../../shared/ui/icons/book'
-import { CalendarEdit } from '../../shared/ui/icons/calendar-edit'
-import { Coffe } from '../../shared/ui/icons/coffe'
-import { CoffeeFull } from '../../shared/ui/icons/coffe-full'
-import { CalendarEditActive } from '../../shared/ui/icons/calendar-edit-active'
+import { Book } from '@/shared/ui/icons/book'
+import { CalendarEdit } from '@/shared/ui/icons/calendar-edit'
+import { Coffe } from '@/shared/ui/icons/coffe'
+import { CoffeeFull } from '@/shared/ui/icons/coffe-full'
+import { CalendarEditActive } from '@/shared/ui/icons/calendar-edit-active'
 
 import styles from './nav-bottom-bar.module.css'
 

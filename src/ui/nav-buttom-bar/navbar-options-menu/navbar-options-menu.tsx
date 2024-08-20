@@ -1,8 +1,8 @@
 import { SVGProps } from 'react'
 
-import { Calendar } from '../../../shared/ui/icons/calendar'
-import { PlusCircle } from '../../../shared/ui/icons/plus-circle'
-import { Trash } from '../../../shared/ui/icons/trash'
+import { Calendar } from '@/shared/ui/icons/calendar'
+import { PlusCircle } from '@/shared/ui/icons/plus-circle'
+import { Trash } from '@/shared/ui/icons/trash'
 
 import styles from './navbar-options-menu.module.css'
 
