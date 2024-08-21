@@ -1,6 +1,5 @@
 import { HomePage } from './home/views/home'
-import { Header } from './shared/ui/header/header'
-import { NavBar } from './ui/nav-bottom-bar'
+import { NavBar, Header } from './shared/ui'
 
 function App() {
   return (
