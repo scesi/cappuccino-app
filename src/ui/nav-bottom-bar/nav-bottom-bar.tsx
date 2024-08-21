@@ -1,43 +1,9 @@
-import { type SVGProps, useState } from 'react'
+import { useState } from 'react'
 
-import {
-  Book,
-  CalendarEdit,
-  CalendarEditActive,
-  Coffee,
-  CoffeeActive,
-} from '@/shared/ui/icons'
 import { NavbarOptionsMenu } from './navbar-options-menu/navbar-options-menu'
+import { navItems } from './nav-items'
 
 import styles from './nav-bottom-bar.module.css'
-
-interface NavItem {
-  id: number
-  label: string
-  icon: (props: SVGProps<SVGSVGElement>) => React.ReactNode
-  activeIcon: (props: SVGProps<SVGSVGElement>) => React.ReactNode
-}
-
-const navItems: NavItem[] = [
-  {
-    id: 0,
-    label: 'Carrerras',
-    icon: Book,
-    activeIcon: Book,
-  },
-  {
-    id: 1,
-    label: 'Horario',
-    icon: CalendarEdit,
-    activeIcon: CalendarEditActive,
-  },
-  {
-    id: 2,
-    label: 'Más',
-    icon: Coffee,
-    activeIcon: CoffeeActive,
-  },
-]
 
 export const NavBar = () => {
   const [activeButtonIndex, setActiveButtonIndex] = useState<number>(-1)
@@ -49,27 +15,30 @@ export const NavBar = () => {
 
   const handleButtonClick = (index: number) => {
     setActiveButtonIndex(index)
-    if (index === 2) {
+    const activeNavItem = navItems[index]
+
+    if (activeNavItem.id === 'options-menu') {
       toggleDropdown()
-    } else {
-      setIsDropdownOpen(false)
+      return
     }
+
+    setIsDropdownOpen(false)
   }
 
   return (
     <div>
       <div className={styles.navBottomBar}>
         <div className={styles.buttons}>
-          {navItems.map((button) => (
+          {navItems.map((navItem, idx) => (
             <button
-              key={button.id}
-              className={`${styles.button} ${activeButtonIndex === button.id ? styles.active : ''}`}
-              onClick={() => handleButtonClick(button.id)}
+              key={navItem.id}
+              className={`${styles.button} ${activeButtonIndex === idx ? styles.active : ''}`}
+              onClick={() => handleButtonClick(idx)}
             >
-              {activeButtonIndex === button.id
-                ? button.activeIcon({ fill: '#000' })
-                : button.icon({ fill: '#000' })}
-              <span>{button.label}</span>
+              {activeButtonIndex === idx
+                ? navItem.activeIcon({ fill: '#000' })
+                : navItem.icon({ fill: '#000' })}
+              <span>{navItem.label}</span>
             </button>
           ))}
         </div>
