@@ -11,16 +11,18 @@ export const NavbarOptionsMenu = ({ isDropdownOpen = false }: Props) => {
     <div
       className={`${styles.dropdownOptions} ${isDropdownOpen ? styles.dropdownEnter : styles.dropdownExit}`}
     >
-      <div className={styles.body}>
+      <ul className={styles.body} role="menu">
         {options.map((option) => (
-          <button key={option.id} className={styles.buttonOption}>
-            {option.label}
-            <span className={styles.icon}>
-              <option.icon />
-            </span>
-          </button>
+          <li key={option.id}>
+            <button className={styles.buttonOption}>
+              {option.label}
+              <span className={styles.icon}>
+                <option.icon />
+              </span>
+            </button>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

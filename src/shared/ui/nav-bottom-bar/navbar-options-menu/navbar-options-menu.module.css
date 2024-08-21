@@ -33,6 +33,11 @@
   padding: 10px;
   margin-right: 23px;
   gap: 10px;
+  list-style: none;
+}
+
+.body li {
+  width: 100%;
 }
 
 .buttonOption {
