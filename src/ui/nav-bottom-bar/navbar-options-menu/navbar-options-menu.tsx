@@ -1,42 +1,38 @@
-import { SVGProps } from 'react'
+import type { SVGProps } from 'react'
 
-import { CalendarIcon } from '../../../shared/ui/icons/calendar'
-import { PlusCircleIcon } from '../../../shared/ui/icons/plus-circle'
-import { TrashIcon } from '../../../shared/ui/icons/trash'
+import { Calendar, PlusCircle, Trash } from '@/shared/ui/icons'
 
 import styles from './navbar-options-menu.module.css'
 
-interface NavbarOptionMenu {
+interface NavbarOptionMenuItem {
   id: number
   label: string
   icon: (props: SVGProps<SVGSVGElement>) => JSX.Element
 }
 
-const options: NavbarOptionMenu[] = [
+const options: NavbarOptionMenuItem[] = [
   {
     id: 0,
     label: 'Añadir al Calendario de Google',
-    icon: CalendarIcon,
+    icon: Calendar,
   },
   {
     id: 1,
     label: 'Agregar carrera',
-    icon: PlusCircleIcon,
+    icon: PlusCircle,
   },
   {
     id: 2,
     label: 'Eliminar materias seleccionadas',
-    icon: TrashIcon,
+    icon: Trash,
   },
 ]
 
-type NavbarOptionsMenuProps = {
+interface Props {
   isDropdownOpen: boolean
 }
 
-export const NavbarOptionsMenu = ({
-  isDropdownOpen = false,
-}: NavbarOptionsMenuProps) => {
+export const NavbarOptionsMenu = ({ isDropdownOpen = false }: Props) => {
   return (
     <div
       className={`${styles.dropdownOptions} ${isDropdownOpen ? styles.dropdownEnter : styles.dropdownExit}`}

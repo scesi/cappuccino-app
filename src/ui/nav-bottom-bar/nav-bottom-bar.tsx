@@ -1,46 +1,46 @@
-import { SVGProps, useState } from 'react'
+import { type SVGProps, useState } from 'react'
 
+import {
+  Book,
+  CalendarEdit,
+  CalendarEditActive,
+  Coffee,
+  CoffeeActive,
+} from '@/shared/ui/icons'
 import { NavbarOptionsMenu } from './navbar-options-menu/navbar-options-menu'
-import { BookIcon } from '../../shared/ui/icons/book'
-import { CalendarEditIcon } from '../../shared/ui/icons/calendar-edit'
-import { CoffeIcon } from '../../shared/ui/icons/coffe'
-import { CoffeeIconFull } from '../../shared/ui/icons/coffe-full'
-import { CalendarEditIconActive } from '../../shared/ui/icons/calendar-edit-active'
 
 import styles from './nav-bottom-bar.module.css'
 
-interface Button {
+interface NavItem {
   id: number
   label: string
-  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element
-  activeIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element
+  icon: (props: SVGProps<SVGSVGElement>) => React.ReactNode
+  activeIcon: (props: SVGProps<SVGSVGElement>) => React.ReactNode
 }
 
-const buttons: Button[] = [
+const navItems: NavItem[] = [
   {
     id: 0,
     label: 'Carrerras',
-    icon: BookIcon,
-    activeIcon: BookIcon,
+    icon: Book,
+    activeIcon: Book,
   },
   {
     id: 1,
     label: 'Horario',
-    icon: CalendarEditIcon,
-    activeIcon: CalendarEditIconActive,
+    icon: CalendarEdit,
+    activeIcon: CalendarEditActive,
   },
   {
     id: 2,
     label: 'Más',
-    icon: CoffeIcon,
-    activeIcon: CoffeeIconFull,
+    icon: Coffee,
+    activeIcon: CoffeeActive,
   },
 ]
 
 export const NavBar = () => {
-  const [activeButtonIndex, setActiveButtonIndex] = useState<number | null>(
-    null,
-  )
+  const [activeButtonIndex, setActiveButtonIndex] = useState<number>(-1)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const toggleDropdown = () => {
@@ -60,7 +60,7 @@ export const NavBar = () => {
     <div>
       <div className={styles.navBottomBar}>
         <div className={styles.buttons}>
-          {buttons.map((button) => (
+          {navItems.map((button) => (
             <button
               key={button.id}
               className={`${styles.button} ${activeButtonIndex === button.id ? styles.active : ''}`}
