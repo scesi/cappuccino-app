@@ -3,11 +3,35 @@ import { HeroSection, LinkCard } from '@/home/components'
 import { SearchBar } from '@/shared/ui'
 
 import styles from './home-page.module.css'
+import { CareerDetails, SemesterAccordion } from '@/schedule/components'
 
 export const HomePage = () => {
   return (
     <>
       <HeroSection />
+
+      <CareerDetails careerName="INGENIERÍA DE SISTEMAS">
+        <SemesterAccordion
+          semester={{
+            name: 'Semestre 1 (Nivel A)',
+            subjects: [],
+          }}
+        ></SemesterAccordion>
+
+        <SemesterAccordion
+          semester={{
+            name: 'Semestre 2 (Nivel B)',
+            subjects: [],
+          }}
+        ></SemesterAccordion>
+
+        <SemesterAccordion
+          semester={{
+            name: 'Semestre 3 (Nivel C)',
+            subjects: [],
+          }}
+        ></SemesterAccordion>
+      </CareerDetails>
 
       <section className={styles.careers}>
         <SearchBar title="Busca tu carrera" />
