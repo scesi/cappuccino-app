@@ -5,8 +5,10 @@ import { NavBar } from './ui/nav-bottom-bar'
 function App() {
   return (
     <>
-      <Header />
-      <HomePage />
+      <div className="main-layout">
+        <Header />
+        <HomePage />
+      </div>
       <NavBar />
     </>
   )

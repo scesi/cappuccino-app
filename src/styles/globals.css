@@ -24,6 +24,9 @@
   text-align: center;
 }
 
+.main-layout {
+  margin-bottom: 72px;
+}
 .subtitle-2 {
   font-size: 15px;
   font-weight: 700;
