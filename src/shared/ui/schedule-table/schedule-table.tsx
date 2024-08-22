@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
-import { Day, Schedule } from '../../../models/index'
 import { formatHour } from './utils/time-formatter'
-import { getHourIndex, getRowSpan } from './utils/schedule-utils'
+import { getHourIndex } from './utils/schedule-utils'
+import { SCHEDULE_HOURS } from './utils/schedule-hours'
+import { ScheduleCell } from './schedule-cell'
+import { Day, Schedule } from '@/models'
 
 const daysOfWeek = [Day.Lu, Day.Ma, Day.Mi, Day.Ju, Day.Vi, Day.Sa]
 
@@ -10,29 +12,6 @@ type ScheduleItem = Schedule & { subjectName: string; subjectCode: string }
 interface Props {
   schedule: ScheduleItem[]
 }
-
-const SCHEDULE_HOURS = [
-  '06:45',
-  '07:30',
-  '08:15',
-  '09:00',
-  '09:45',
-  '10:30',
-  '11:15',
-  '12:00',
-  '12:45',
-  '13:30',
-  '14:15',
-  '15:00',
-  '15:45',
-  '16:30',
-  '17:15',
-  '18:00',
-  '18:45',
-  '19:30',
-  '20:15',
-  '21:00',
-]
 
 export const ScheduleTable = ({ schedule }: Props) => {
   const [intermediateHoursToDisplay, setIntermediateHoursToDisplay] = useState<
@@ -45,6 +24,8 @@ export const ScheduleTable = ({ schedule }: Props) => {
   )
 
   useEffect(() => {
+    const hoursToShow: string[] = []
+
     schedule.forEach((item) => {
       const startFormatted = formatHour(item.start)
       const endFormatted = formatHour(item.end)
@@ -52,11 +33,18 @@ export const ScheduleTable = ({ schedule }: Props) => {
       const newIntermediateHours = intermediateHours.filter(
         (hour) => startFormatted === hour || endFormatted === hour,
       )
-      setIntermediateHoursToDisplay((prev) => prev.concat(newIntermediateHours))
-    })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [schedule])
 
+      hoursToShow.push(...newIntermediateHours)
+    })
+
+    const uniqueHoursToShow = Array.from(new Set(hoursToShow))
+    if (
+      JSON.stringify(uniqueHoursToShow) !==
+      JSON.stringify(intermediateHoursToDisplay)
+    ) {
+      setIntermediateHoursToDisplay(uniqueHoursToShow)
+    }
+  }, [schedule])
   return (
     <table>
       <thead>
@@ -96,38 +84,4 @@ export const ScheduleTable = ({ schedule }: Props) => {
       </tbody>
     </table>
   )
-}
-
-interface ScheduleCellProps {
-  day: Day
-  hour: string
-  isEmptyCell: boolean
-  scheduleItem: ScheduleItem
-}
-
-const ScheduleCell = ({
-  day,
-  hour,
-  isEmptyCell,
-  scheduleItem,
-}: ScheduleCellProps) => {
-  if (scheduleItem) {
-    return (
-      <td
-        rowSpan={getRowSpan(
-          scheduleItem.start,
-          scheduleItem.end,
-          SCHEDULE_HOURS,
-        )}
-      >
-        <strong>{scheduleItem.subjectName}</strong> <br />
-        {scheduleItem.room} <br />
-        G:{scheduleItem.subjectCode} <br />
-      </td>
-    )
-  }
-
-  if (isEmptyCell) return null
-
-  return <td key={`${day}-${hour}`}></td>
 }
