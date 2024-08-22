@@ -27,7 +27,7 @@ export const subjects = [
           {
             day: 'SA',
             start: '945',
-            end: '1115',
+            end: '1030',
             duration: 2,
             room: '617C',
             isClass: true,
@@ -45,15 +45,15 @@ export const subjects = [
       {
         code: '11',
         schedule: [
-          {
-            day: 'LU',
-            start: '645',
-            end: '815',
-            duration: 2,
-            room: '622',
-            isClass: true,
-            teacher: 'ROJAS ZURITA RAMIRO',
-          },
+          // {
+          //   day: 'LU',
+          //   start: '645',
+          //   end: '815',
+          //   duration: 2,
+          //   room: '622',
+          //   isClass: true,
+          //   teacher: 'ROJAS ZURITA RAMIRO',
+          // },
           {
             day: 'MA',
             start: '815',
