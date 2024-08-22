@@ -1,4 +1,4 @@
-import { subjects } from '../../../../data/subjects'
+import { subjects } from '@/data/subjects'
 import { parseDay } from './day-parser'
 
 /**
