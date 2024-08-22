@@ -1,4 +1,4 @@
-import { Day } from "../../../../models"
+import { Day } from "@/models"
 
 export const parseDay = (day: string): Day => {
   switch (day) {
