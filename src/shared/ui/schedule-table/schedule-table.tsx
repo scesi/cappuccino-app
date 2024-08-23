@@ -23,6 +23,10 @@ export const ScheduleTable = ({ schedule }: Props) => {
     (hour, idx) => intermediateHoursToDisplay.includes(hour) || idx % 2 === 0,
   )
 
+  const daysWithSchedules = daysOfWeek.filter((day) =>
+    schedule.some((item) => item.day === day),
+  )
+
   useEffect(() => {
     const hoursToShow: string[] = []
 
@@ -38,6 +42,8 @@ export const ScheduleTable = ({ schedule }: Props) => {
     })
 
     const uniqueHoursToShow = Array.from(new Set(hoursToShow))
+
+    // Solo actualiza el estado si las horas calculadas son diferentes de las actuales
     if (
       JSON.stringify(uniqueHoursToShow) !==
       JSON.stringify(intermediateHoursToDisplay)
@@ -45,12 +51,13 @@ export const ScheduleTable = ({ schedule }: Props) => {
       setIntermediateHoursToDisplay(uniqueHoursToShow)
     }
   }, [schedule])
+
   return (
     <table>
       <thead>
         <tr>
           <th></th>
-          {daysOfWeek.map((day) => (
+          {daysWithSchedules.map((day) => (
             <th key={day}>{day}</th>
           ))}
         </tr>
@@ -59,26 +66,30 @@ export const ScheduleTable = ({ schedule }: Props) => {
         {visibleHours.map((hour, index) => (
           <tr key={hour}>
             <td>{hour}</td>
-            {daysOfWeek.map((day) => (
-              <ScheduleCell
-                key={`${day}-${hour}`}
-                day={day}
-                hour={hour}
-                scheduleItem={
-                  schedule.find(
-                    (item) =>
-                      item.day === day &&
-                      getHourIndex(item.start, SCHEDULE_HOURS) === index,
-                  )!
-                }
-                isEmptyCell={schedule.some(
-                  (item) =>
-                    item.day === day &&
-                    getHourIndex(item.start, SCHEDULE_HOURS) < index &&
-                    getHourIndex(item.end, SCHEDULE_HOURS) > index,
-                )}
-              />
-            ))}
+            {daysOfWeek.map((day) => {
+              const scheduleItem = schedule.find(
+                (item) =>
+                  item.day === day &&
+                  getHourIndex(item.start, SCHEDULE_HOURS) === index,
+              )!
+
+              const isEmptyCell = schedule.some(
+                (item) =>
+                  item.day === day &&
+                  getHourIndex(item.start, SCHEDULE_HOURS) < index &&
+                  getHourIndex(item.end, SCHEDULE_HOURS) > index,
+              )
+
+              return (
+                <ScheduleCell
+                  key={`${day}-${hour}`}
+                  day={day}
+                  hour={hour}
+                  scheduleItem={scheduleItem}
+                  isEmptyCell={isEmptyCell}
+                />
+              )
+            })}
           </tr>
         ))}
       </tbody>
