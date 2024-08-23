@@ -35,7 +35,7 @@ export const DeleteModal = ({ accept, close }: DeleteModalProps) => {
       <article
         className={styles.deleteModal}
         onClick={(e) => {
-          e.stopPropagation
+          e.stopPropagation()
         }}
       >
         <div className={styles.modalTitle}>

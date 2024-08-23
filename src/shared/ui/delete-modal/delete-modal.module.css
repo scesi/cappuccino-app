@@ -23,6 +23,7 @@
 
 .modalTitle {
   display: flex;
+  align-items: center;
   padding-inline: 40px;
 }
 
