@@ -1,18 +1,18 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { FC, useEffect } from 'react'
+import { useEffect } from 'react'
 
 import styles from '@/shared/ui/delete-modal/delete-modal.module.css'
 
-import trashIcon from '@/assets/trash-icon.svg'
+import { TrashIcon } from '@/shared/ui/icons/trash-icon'
 
 interface DeleteModalProps {
   accept: () => void
   close: () => void
 }
 
-export const DeleteModal: FC<DeleteModalProps> = ({ accept, close }) => {
+export const DeleteModal = ({ accept, close }: DeleteModalProps) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden'
 
@@ -39,7 +39,7 @@ export const DeleteModal: FC<DeleteModalProps> = ({ accept, close }) => {
         }}
       >
         <div className={styles.modalTitle}>
-          <img src={trashIcon} alt="" className={styles.modalIcon} />
+          <TrashIcon />
           <p className={styles.modalText}>
             ¿Estás seguro de limpiar su horario?
           </p>
