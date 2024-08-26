@@ -6,6 +6,7 @@ import {
 import { SemesterAccordionProps } from './semester-accordion-props.interface'
 
 import styles from './semester-accordion.module.css'
+import { SubjectAccordion } from '../subject-accordion/subject-accordion'
 
 export function SemesterAccordion({ semester }: SemesterAccordionProps) {
   return (
@@ -27,12 +28,19 @@ export function SemesterAccordion({ semester }: SemesterAccordionProps) {
         }
         className={styles.semesterAccordion}
       >
-        <h3 className={styles.semesterName}>{semester.name}</h3>
+        <h3 className={styles.semesterName}>{semester.label}</h3>
       </AccordionSummary>
 
       <AccordionDetails>
-        <section className={styles.semesterAccordionSubjects}>
-          <p>Content</p>
+        <section className={styles.subjectsContainer}>
+          <section className={styles.semesterAccordionSubjects}>
+            {semester.subjects.map((subject) => (
+              <SubjectAccordion
+                key={subject.id}
+                subject={subject}
+              ></SubjectAccordion>
+            ))}
+          </section>
         </section>
       </AccordionDetails>
     </Accordion>
