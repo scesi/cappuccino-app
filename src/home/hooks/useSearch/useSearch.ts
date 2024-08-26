@@ -1,73 +1,39 @@
-import { useState } from "react"
+import { filterItemsByQuery, orderItemsByLevel } from '@/utils'
+import { useState } from 'react'
 
-import { Level, Subject } from "@/models"
-import { isTextSimilarToText } from "@/utils"
-
-interface searchTerms {
-    teacher: string,
-    subjectName: string
+interface Key {
+  paths: string[]
+  level: string
 }
 
-interface attributes {
-    items: Level[],
-    keys: (keyof searchTerms)[],
-    query: string
+interface Attributes<T> {
+  items: T[]
+  key: Key
+  query: string
 }
 
-export const useSearch = ({ items: levels, keys, query }: attributes) => {
-    const [subjects, setSubjects] = useState<Subject[]>([]);
+export const useSearch = <T>({ items, key, query }: Attributes<T>) => {
+  const [results, setResults] = useState<T[]>([])
 
-    const resetSubjects = () => {
-        setSubjects([]);
-    }
+  const resetResults = () => {
+    setResults([])
+  }
 
-    const filterSubjectsByTeacherName = (subject: Subject) => {
-        return subject.groups.find(g => isTextSimilarToText( g.teacher, query));
-    }
+  const filterItems = () => {
+    const filteredItems: T[] = []
 
-    const filterSubjectsBySubjectName = (subject: Subject) => {
-        return isTextSimilarToText(subject.name, query);
-    }
+    key.paths.forEach((path: string) => {
+      const level = key.level
+      const attributes: string[] = path.split('.')
 
-    const filteredSubjectsByTeacherOrSubjectName = (subject: Subject) => {
-        return filterSubjectsByTeacherName(subject) || filterSubjectsBySubjectName(subject);
-    }
+      const itemsOrderedByLevel = orderItemsByLevel(items, attributes, level)
+      filteredItems.unshift(
+        ...filterItemsByQuery(itemsOrderedByLevel, attributes, query),
+      )
+    })
 
-    const filterSubjectsByKeys = (subject: Subject) => {
-        if(keys.includes("subjectName") && keys.includes("teacher")) {
-            return filteredSubjectsByTeacherOrSubjectName(subject);
-        }
-        else if(keys.includes("subjectName")) {
-            return filterSubjectsBySubjectName(subject);
-        }
-        else if(keys.includes("teacher")) {
-            return filterSubjectsByTeacherName(subject);
-        }  
-    }
+    setResults(filteredItems)
+  }
 
-    const filterSubjects = () => {
-        if(query == null || query.length === 0) {
-            resetSubjects();
-        }
-        else {
-            let result: Subject[] = [];
-
-            levels.forEach(
-                (level) => {
-                    const filteredSubjects: Subject[] = level.subjects.filter(filterSubjectsByKeys);
-                    if(filteredSubjects.length > 0) {
-                        result = result.concat(filteredSubjects)
-                    }
-                });
-
-            if(result.length > 0) {
-                setSubjects(result);
-            }
-            else {
-                resetSubjects();
-            }
-        }
-    }
-
-    return { subjects, filterSubjects };
+  return { results, filterItems, resetResults }
 }

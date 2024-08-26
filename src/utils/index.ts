@@ -1,1 +1,2 @@
-export * from './string-comparator';
+export * from './deep-searcher'
+export * from './string-comparator'

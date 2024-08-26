@@ -1,3 +1,9 @@
-export const isTextSimilarToText = (firstText: string, secondText: string) => {
-    return firstText.toUpperCase().includes(secondText.toUpperCase());
+export const isTextSimilarToText = (
+  firstText: string,
+  secondText: string,
+): boolean => {
+  return firstText
+    .toString()
+    .toUpperCase()
+    .includes(secondText.toString().toUpperCase())
 }
