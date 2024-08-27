@@ -45,8 +45,9 @@
   height: 50px;
   color: #242424;
   background-color: white;
-  border: 1px solid #00001d;
+  border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .modalButtonCancel {
@@ -59,4 +60,6 @@
   color: white;
   background-color: #00001d;
   border-radius: 10px;
+  border: none;
+  cursor: pointer;
 }
