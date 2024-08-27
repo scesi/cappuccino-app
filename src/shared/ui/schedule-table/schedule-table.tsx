@@ -3,7 +3,7 @@ import { formatHour } from './utils/time-formatter'
 import { getHourIndex } from './utils/schedule-utils'
 import { SCHEDULE_HOURS } from './utils/schedule-hours'
 import { ScheduleCell } from './schedule-cell'
-import { Day, Schedule } from '@/models'
+import { Day, Schedule } from '@/interfaces/degree-program.interface'
 
 const daysOfWeek = [Day.Lu, Day.Ma, Day.Mi, Day.Ju, Day.Vi, Day.Sa]
 
