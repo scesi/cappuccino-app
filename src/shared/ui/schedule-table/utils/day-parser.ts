@@ -1,4 +1,4 @@
-import { Day } from "@/models"
+import { Day } from "@/interfaces/degree-program.interface"
 
 export const parseDay = (day: string): Day => {
   switch (day) {
