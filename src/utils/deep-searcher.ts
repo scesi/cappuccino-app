@@ -7,47 +7,44 @@ Method to restructure the objects format inside a list according to an existing 
 * @param {string} level - Property that determine the format of objects in result list  
 * @returns {S[]} - Result list
 */
-export const orderItemsByLevel = <T, S extends T>(
+export const orderItemsByLevel = <T extends object, S extends T>(
   items: T[],
-  attributes: string[],
+  attributes: (keyof T)[],
   level: string,
 ): S[] => {
   if (
-    !attributes.includes(level) ||
+    !attributes.includes(level as keyof T) ||
     attributes === null ||
     attributes.length === 0 ||
     level === null ||
     level.length === 0 ||
     items === null ||
     items.length === 0
-  ) {
+  )
     return []
-  }
 
   return items.flatMap((item) => {
-    let value = new Array(item)
+    let value = [item]
 
     for (const attribute of attributes) {
-      value = value.flatMap((val) => val[attribute] || [])
-      if (attribute === level) {
-        break
-      }
+      value = value.flatMap((val) => (val[attribute] as T) || [])
+      if (attribute === level) break
     }
 
     return value
   }) as S[]
 }
 
-/** 
+/**
 Method for searching a list of objects where the final attribute in the attribute list is similar to a query string
-* @param {T[]} items - List of elements on wich the search will be performed  
-* @param {string[]} attributes - List of attibutes to travel before compare the query 
-* @param {string} query - text to be compared with the last attibute in the attribute list
-* @returns {T[]} - List of filtered objects
+* @param items - List of elements on wich the search will be performed
+* @param attributes - List of attibutes to travel before compare the query
+* @param query - text to be compared with the last attibute in the attribute list
+* @returns List of filtered objects
 */
-export const filterItemsByQuery = <T>(
+export const filterItemsByQuery = <T extends object>(
   items: T[],
-  attributes: string[],
+  attributes: (keyof T)[],
   query: string,
 ): T[] => {
   if (
@@ -56,23 +53,22 @@ export const filterItemsByQuery = <T>(
     items === null ||
     items.length === 0 ||
     query === null
-  ) {
+  )
     return []
-  }
 
   return items.filter((item) => {
     let value = new Array(item)
     let isValid = false
 
-    attributes.forEach((attribute: string, index) => {
+    attributes.forEach((attribute, index) => {
       if (index < attributes.length - 1) {
-        value = value.flatMap((val) => val[attribute] || val)
+        value = value.flatMap((val) => (val[attribute] as T) || val)
       } else {
         if (typeof value[0] !== 'object') {
           isValid = isTextSimilarToText(value[0], query.toUpperCase())
         } else {
           isValid = value.some((val) =>
-            isTextSimilarToText(val[attribute], query),
+            isTextSimilarToText(val[attribute] as string, query),
           )
         }
       }
