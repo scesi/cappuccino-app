@@ -28,10 +28,12 @@
     "types": [
       "@testing-library/jest-dom"
     ],
+    // relative paths
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
     }
   },
   "include": [
