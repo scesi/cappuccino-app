@@ -1,4 +1,4 @@
-import { filterItemsByQuery, orderItemsByLevel } from '@/utils'
+import { filterItemsByQuery, flatItemsByLevel } from '@/utils'
 import { useState } from 'react'
 
 interface Key {

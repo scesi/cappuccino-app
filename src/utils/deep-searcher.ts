@@ -7,32 +7,37 @@ Method to restructure the objects format inside a list according to an existing 
 * @param {string} level - Property that determine the format of objects in result list  
 * @returns {S[]} - Result list
 */
-export const orderItemsByLevel = <T extends object, S extends T>(
+export const flatItemsByLevel = <T extends object, S extends T>(
   items: T[],
   attributes: (keyof T)[],
   level: string,
 ): S[] => {
   if (
     !attributes.includes(level as keyof T) ||
-    attributes === null ||
-    attributes.length === 0 ||
-    level === null ||
-    level.length === 0 ||
-    items === null ||
-    items.length === 0
+    !attributes.length ||
+    !level ||
+    !items.length
   )
     return []
 
-  return items.flatMap((item) => {
-    let value = [item]
+  return items.flatMap((item) =>
+    getItemExtractionLevel(item, attributes, level),
+  ) as S[]
+}
 
-    for (const attribute of attributes) {
-      value = value.flatMap((val) => (val[attribute] as T) || [])
-      if (attribute === level) break
-    }
+const getItemExtractionLevel = <T extends object>(
+  item: T,
+  attributes: (keyof T)[],
+  level: string,
+) => {
+  let value = [item]
 
-    return value
-  }) as S[]
+  for (const attribute of attributes) {
+    value = value.flatMap((val) => (val[attribute] as T) || [])
+    if (attribute === level) break
+  }
+
+  return value
 }
 
 /**
@@ -47,32 +52,34 @@ export const filterItemsByQuery = <T extends object>(
   attributes: (keyof T)[],
   query: string,
 ): T[] => {
-  if (
-    attributes === null ||
-    attributes.length === 0 ||
-    items === null ||
-    items.length === 0 ||
-    query === null
+  if (!attributes.length || !items.length || !query) return []
+
+  return items.filter((item) =>
+    matchesQueryInHierarchy(item, attributes, query),
   )
-    return []
+}
 
-  return items.filter((item) => {
-    let value = new Array(item)
-    let isValid = false
+const matchesQueryInHierarchy = <T extends object>(
+  item: T,
+  attributes: (keyof T)[],
+  query: string,
+) => {
+  if (attributes.length === 0) return false
+  let value = [item]
+  let isValid = false
 
-    attributes.forEach((attribute, index) => {
-      if (index < attributes.length - 1) {
-        value = value.flatMap((val) => (val[attribute] as T) || val)
+  attributes.forEach((attribute, index) => {
+    if (index < attributes.length - 1) {
+      value = value.flatMap((val) => (val[attribute] as T) || val)
+    } else {
+      if (typeof value[0] !== 'object') {
+        isValid = isTextSimilarToText(value[0], query.toUpperCase())
       } else {
-        if (typeof value[0] !== 'object') {
-          isValid = isTextSimilarToText(value[0], query.toUpperCase())
-        } else {
-          isValid = value.some((val) =>
-            isTextSimilarToText(val[attribute] as string, query),
-          )
-        }
+        isValid = value.some((val) =>
+          isTextSimilarToText(val[attribute] as string, query),
+        )
       }
-    })
-    return isValid
+    }
   })
+  return isValid
 }
