@@ -33,11 +33,18 @@ const getItemExtractionLevel = <T extends object>(
   let value = [item]
 
   for (const attribute of attributes) {
-    value = value.flatMap((val) => (val[attribute] as T) || [])
+    value = flattenAttributes(value, attribute)
     if (attribute === level) break
   }
 
   return value
+}
+
+const flattenAttributes = <T extends object>(
+  value: T[],
+  attribute: keyof T,
+): T[] => {
+  return value.flatMap((val) => (val[attribute] as T[]) || val)
 }
 
 /**
@@ -70,16 +77,24 @@ const matchesQueryInHierarchy = <T extends object>(
 
   attributes.forEach((attribute, index) => {
     if (index < attributes.length - 1) {
-      value = value.flatMap((val) => (val[attribute] as T) || val)
+      value = flattenAttributes(value, attribute)
     } else {
-      if (typeof value[0] !== 'object') {
-        isValid = isTextSimilarToText(value[0], query.toUpperCase())
-      } else {
-        isValid = value.some((val) =>
-          isTextSimilarToText(val[attribute] as string, query),
-        )
-      }
+      isValid = isFinalAttributeMatch(value, attribute, query)
     }
   })
   return isValid
+}
+
+const isFinalAttributeMatch = <T extends object>(
+  values: T[],
+  attribute: keyof T,
+  query: string,
+): boolean => {
+  if (typeof values[0] !== 'object') {
+    return isTextSimilarToText(values[0], query)
+  } else {
+    return values.some((val) =>
+      isTextSimilarToText((val[attribute] as string) || '', query),
+    )
+  }
 }
