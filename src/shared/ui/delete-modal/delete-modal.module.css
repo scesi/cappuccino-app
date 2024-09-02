@@ -33,7 +33,9 @@
 
 .buttonsContainer {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .modalButtonAccept {
