@@ -1,0 +1,15 @@
+services:
+  cappuccino-app:
+    image: cappuccino-app:latest
+    container_name: cappuccino-app
+    hostname: cappuccino-app
+    build:
+      context: ./
+      dockerfile: .docker/Dockerfile
+    ports:
+      - 80:80
+    networks:
+      - network_app
+
+networks:
+  network_app:
