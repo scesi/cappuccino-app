@@ -1,9 +1,7 @@
-
-import { combinedSchedule } from './shared/ui'
+import { combinedSchedule, Header } from './shared/ui'
 import { ScheduleTable } from './shared/ui'
-import { Header } from './shared/ui/header/header'
 import { HomePage } from './home/views/home'
-import { NavBar, Header } from './shared/ui'
+import { NavBar } from './shared/ui'
 
 function App() {
   return (
