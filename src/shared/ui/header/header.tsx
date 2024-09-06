@@ -5,7 +5,7 @@ import styles from './header.module.css'
 
 export const Header = () => {
   return (
-    <header className="header">
+    <header className={styles.header}>
       <img className={styles.logoscesi} src={logoSCESI} alt="logo scesi" />
       <h1 className={styles.title}>CAPPUCHINO</h1>
       <img src={threedots} alt="threeDotsbutton" className={styles.threedots} />

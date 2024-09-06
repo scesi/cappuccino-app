@@ -1,4 +1,4 @@
-import { ScheduleTable } from './components/Schedule/schedule-table'
+import { ScheduleTable } from './home/components/schedule/schedule-table'
 import { HomePage } from './home/views/home'
 import { NavBar, Header } from './shared/ui'
 
@@ -7,7 +7,7 @@ function App() {
     <>
       <div className="main-layout">
         <Header />
-        <ScheduleTable/>
+        <ScheduleTable />
         <HomePage />
       </div>
       <NavBar />

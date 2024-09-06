@@ -48,14 +48,15 @@ export const ScheduleTable = () => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.scheduleGridHeader}>
+      <header className={styles.scheduleGridHeader}>
         <div className={styles.scheduleGridHeader_item}></div>
         {weekdays.map((weekday, index) => (
           <div className={styles.scheduleGridHeader_item} key={index}>
             {weekday}
           </div>
         ))}
-      </div>
+      </header>
+
       <div className={styles.scheduleGridContainer}>{rows}</div>
     </section>
   )
