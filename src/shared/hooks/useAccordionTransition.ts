@@ -1,9 +1,9 @@
 import { useContext, useEffect, useRef, useState } from 'react'
-import { AccordionContext, AccordionContextValue } from './accordion-context'
+import { AccordionContext } from '@/shared/ui/accordion/accordion-context'
 
 export function useAccordionTransition<T extends HTMLElement>() {
   const { expanded, animationDuration } =
-    useContext<AccordionContextValue>(AccordionContext)
+    useContext<AccordionContext>(AccordionContext)
   const [height, setHeight] = useState<number | 'auto'>(0)
   const contentRef = useRef<T>(null)
 
@@ -25,11 +25,18 @@ export function useAccordionTransition<T extends HTMLElement>() {
       }
 
       const currentContentHeight = contentElement.scrollHeight + margin
-      setHeight(currentContentHeight)
+
+      if (expanded === 'disabled') {
+        return
+      }
 
       if (expanded) {
+        setHeight(currentContentHeight)
         setTimeout(() => setHeight('auto'), animationDuration ?? 220)
       } else {
+        {
+          setHeight(currentContentHeight)
+        }
         setTimeout(() => setHeight(0), 100)
       }
     }

@@ -1,12 +1,12 @@
 import { createContext } from 'react'
 
-export interface AccordionContextValue {
-  expanded: boolean
+export interface AccordionContext {
+  expanded: boolean | 'disabled'
   toggle: () => void
   animationDuration?: number
 }
 
-export const AccordionContext = createContext<AccordionContextValue>({
+export const AccordionContext = createContext<AccordionContext>({
   expanded: false,
   toggle: () => {},
 })

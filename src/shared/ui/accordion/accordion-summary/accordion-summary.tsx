@@ -9,17 +9,17 @@ export function AccordionSummary({
   expandIcon,
   ...props
 }: AccordionSummaryProps) {
-  const { toggle, expanded } = useContext(AccordionContext)
+  const { toggle, expanded } = useContext<AccordionContext>(AccordionContext)
 
   return (
     <section className={styles.accordionSummary}>
-      <button className={styles.accordionSummaryLabel} onClick={toggle}>
+      <button className={styles.accordionSummaryExpandButton} onClick={toggle}>
         <div {...props}>
           {children}
 
           {expandIcon && (
             <div
-              className={`${styles.expandIcon} ${expanded && styles.rotate}`}
+              className={`${styles.expandIcon} ${expanded !== 'disabled' && expanded && styles.rotate}`}
             >
               {expandIcon}
             </div>

@@ -5,7 +5,7 @@ import styles from './career-details.module.css'
 
 export function CareerDetails({ careerName, children }: CareerDetailsProps) {
   return (
-    <article className={styles.careerDetails}>
+    <section className={styles.careerDetails}>
       <header className={styles.careerDetailsHeader}>
         <h2 className={styles.carrerDetailsName}>{careerName}</h2>
 
@@ -13,6 +13,6 @@ export function CareerDetails({ careerName, children }: CareerDetailsProps) {
       </header>
 
       <section className={styles.careerDetailsSemesterList}>{children}</section>
-    </article>
+    </section>
   )
 }
