@@ -3,55 +3,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
-  & .subjectName {
-    width: 100%;
-    font-size: 12px;
-    font-weight: 400;
-    margin: 0;
-  }
-
-  & .expandSubject {
-    position: relative;
-    width: 0.7rem;
-    height: 0.7rem;
-
-    & .lineOne {
-      width: 100%;
-      height: 2px;
-      position: absolute;
-      background-color: black;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    & .lineTwo {
-      height: 100%;
-      width: 2px;
-      position: absolute;
-      background-color: black;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: all 0.2s ease-in-out;
-    }
-  }
+.subjectName {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .groupsContainer {
   padding-left: 5px;
   padding-top: 3px;
+}
 
-  & .groups {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    padding-left: 0.7rem;
-    padding-block: 3px;
-    border-left: 1.5px solid #d7dbff;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+.groups {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 0.7rem;
+  padding-block: 3px;
+  border-left: 1.5px solid #d7dbff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

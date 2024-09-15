@@ -7,28 +7,28 @@
   gap: 10px;
   padding-inline: 20px;
   padding-block: 8px;
+}
 
-  & .careerDetailsHeader {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: transparent;
-    align-items: normal;
+.careerDetailsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: transparent;
+  align-items: normal;
+}
 
-    & .carrerDetailsName {
-      text-align: left;
-      margin: 0;
-      font-size: 12px;
-    }
+.carrerDetailsName {
+  text-align: left;
+  margin: 0;
+  font-size: 12px;
+}
 
-    & input[type='text'] {
-      font-size: 12px;
-    }
-  }
+.careerDetailsHeader input[type='text'] {
+  font-size: 12px;
+}
 
-  & .careerDetailsSemesterList {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+.careerDetailsSemesterList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

@@ -7,30 +7,30 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
 
-  & .semesterName {
-    margin: 0;
-    font-size: 12px;
-  }
+.semesterName {
+  margin: 0;
+  font-size: 12px;
 }
 
 .subjectsContainer {
   padding-left: 1rem;
   padding-top: 0.5rem;
+}
 
-  & .semesterAccordionSubjects {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-inline: 0.7rem;
-    padding-block: 0.3rem;
-    border-left: 1.5px solid #d7dbff;
-    gap: 10px;
-  }
+.semesterArrowIcon {
+  transform: rotate(90deg);
+}
 
-  & .semesterArrowIcon {
-    transform: rotate(90deg);
-  }
+.semesterAccordionSubjects {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-inline: 0.7rem;
+  padding-block: 0.3rem;
+  border-left: 1.5px solid #d7dbff;
+  gap: 10px;
 }
 
 .semesterAccordionSubjects {
