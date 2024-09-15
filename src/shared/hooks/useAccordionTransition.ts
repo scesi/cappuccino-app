@@ -30,13 +30,11 @@ export function useAccordionTransition<T extends HTMLElement>() {
         return
       }
 
+      setHeight(currentContentHeight)
+      
       if (expanded) {
-        setHeight(currentContentHeight)
         setTimeout(() => setHeight('auto'), animationDuration ?? 220)
       } else {
-        {
-          setHeight(currentContentHeight)
-        }
         setTimeout(() => setHeight(0), 100)
       }
     }
