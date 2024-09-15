@@ -3,11 +3,15 @@ import {
   AccordionDetails,
   AccordionSummary,
 } from '@/shared/ui/accordion'
-import { SubjectAccordionProps } from './subject-accordion-props.interface'
-
-import styles from './subject-accordion.module.css'
+import { Subject } from '@/models/degree-program'
 import { Group } from '../group/group'
 import { SubjectIconExpand } from './subject-icon-expand/subject-icon-expand'
+
+import styles from './subject-accordion.module.css'
+
+interface SubjectAccordionProps {
+  subject: Subject
+}
 
 export function SubjectAccordion({ subject }: SubjectAccordionProps) {
   return (

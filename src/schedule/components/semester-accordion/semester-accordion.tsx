@@ -3,11 +3,15 @@ import {
   AccordionDetails,
   AccordionSummary,
 } from '@/shared/ui/accordion'
-import { SemesterAccordionProps } from './semester-accordion-props.interface'
+import { Semester } from '@/models/degree-program'
 import { SubjectAccordion } from '../subject-accordion/subject-accordion'
 import { ArrowDown } from '@/shared/ui/icons/arrow-down'
 
 import styles from './semester-accordion.module.css'
+
+interface SemesterAccordionProps {
+  semester: Semester
+}
 
 export function SemesterAccordion({ semester }: SemesterAccordionProps) {
   return (

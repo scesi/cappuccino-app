@@ -1,6 +1,11 @@
-import { GroupProps } from './group-props.interface'
+import { SubjectGroup } from '@/models/degree-program'
 
 import styles from './group.module.css'
+
+interface GroupProps {
+  group: SubjectGroup
+  subjectId: string
+}
 
 export function Group({ group, subjectId }: GroupProps) {
   return (

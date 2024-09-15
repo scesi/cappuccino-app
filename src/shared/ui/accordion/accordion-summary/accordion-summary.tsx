@@ -1,8 +1,19 @@
 import { useContext } from 'react'
 import { AccordionContext } from '@/shared/ui/accordion/accordion-context'
-import { AccordionSummaryProps } from './accordion-summary-props.interface'
 
 import styles from './accordion-summary.module.css'
+
+interface AccordionSummaryProps {
+  expandIcon?: React.ReactNode
+  children: React.ReactNode
+  [key: string]:
+    | React.ReactNode
+    | number
+    | boolean
+    | string
+    | undefined
+    | object
+}
 
 export function AccordionSummary({
   children,

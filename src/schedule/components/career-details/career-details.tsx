@@ -1,7 +1,11 @@
 import { SearchBar } from '@/shared/ui'
-import { CareerDetailsProps } from './career-details-props.interface'
 
 import styles from './career-details.module.css'
+
+interface CareerDetailsProps {
+  careerName: string
+  children: React.ReactNode
+}
 
 export function CareerDetails({ careerName, children }: CareerDetailsProps) {
   return (
