@@ -1,3 +1,5 @@
+import { ScheduleItem } from '@/types/schedule'
+
 export interface DegreeProgram {
   code: string
   levels: Level[]
@@ -39,4 +41,8 @@ export enum Day {
   Ju = 'JU',
   Vi = 'VI',
   Sa = 'SA',
+}
+
+export interface ScheduleProps {
+  schedule: ScheduleItem[]
 }
