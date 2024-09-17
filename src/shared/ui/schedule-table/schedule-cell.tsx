@@ -1,6 +1,6 @@
-import { Day, Schedule } from '@/models'
 import { getRowSpan } from './utils/schedule-utils'
 import { SCHEDULE_HOURS } from './utils/schedule-hours'
+import { Day, Schedule } from '@/interfaces/degree-program.interface';
 
 type ScheduleItem = Schedule & { subjectName: string; subjectCode: string }
 interface ScheduleCellProps {

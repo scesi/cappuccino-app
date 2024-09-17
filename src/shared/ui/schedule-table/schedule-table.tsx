@@ -1,47 +1,45 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { formatHour } from './utils/time-formatter'
 import { getHourIndex } from './utils/schedule-utils'
 import { SCHEDULE_HOURS } from './utils/schedule-hours'
-import { ScheduleCell } from './schedule-cell'
-import { Day, Schedule } from '@/interfaces/degree-program.interface'
+import { Day, ScheduleProps } from '@/interfaces/degree-program.interface'
+import { renderScheduleCell } from './utils/cell-render'
 
 const daysOfWeek = [Day.Lu, Day.Ma, Day.Mi, Day.Ju, Day.Vi, Day.Sa]
 
-type ScheduleItem = Schedule & { subjectName: string; subjectCode: string }
-
-interface Props {
-  schedule: ScheduleItem[]
-}
-
-export const ScheduleTable = ({ schedule }: Props) => {
+export const ScheduleTable = ({ schedule }: ScheduleProps) => {
   const [intermediateHoursToDisplay, setIntermediateHoursToDisplay] = useState<
     string[]
   >([])
 
-  const intermediateHours = SCHEDULE_HOURS.filter((_, idx) => idx % 2 !== 0)
-  const visibleHours = SCHEDULE_HOURS.filter(
-    (hour, idx) => intermediateHoursToDisplay.includes(hour) || idx % 2 === 0,
-  )
+  const intermediateHours = useMemo(() => {
+    return SCHEDULE_HOURS.filter((_, idx) => idx % 2 !== 0)
+  }, [SCHEDULE_HOURS])
 
-  const daysWithSchedules = daysOfWeek.filter((day) =>
-    schedule.some((item) => item.day === day),
-  )
+  const visibleHours = useMemo(() => {
+    return SCHEDULE_HOURS.filter(
+      (hour, idx) => intermediateHoursToDisplay.includes(hour) || idx % 2 === 0,
+    )
+  }, [SCHEDULE_HOURS, intermediateHoursToDisplay])
+
+  const daysWithSchedules = useMemo(() => {
+    return daysOfWeek.filter((day) => schedule.some((item) => item.day === day))
+  }, [schedule])
 
   useEffect(() => {
-    const hoursToShow: string[] = []
+    const hoursToShow = new Set<string>()
 
     schedule.forEach((item) => {
       const startFormatted = formatHour(item.start)
       const endFormatted = formatHour(item.end)
 
-      const newIntermediateHours = intermediateHours.filter(
-        (hour) => startFormatted === hour || endFormatted === hour,
-      )
-
-      hoursToShow.push(...newIntermediateHours)
+      intermediateHours.forEach((hour) => {
+        if (startFormatted === hour || endFormatted === hour) {
+          hoursToShow.add(hour)
+        }
+      })
     })
-
-    const uniqueHoursToShow = Array.from(new Set(hoursToShow))
+    const uniqueHoursToShow = Array.from(hoursToShow)
 
     // Solo actualiza el estado si las horas calculadas son diferentes de las actuales
     if (
@@ -63,32 +61,32 @@ export const ScheduleTable = ({ schedule }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {visibleHours.map((hour, index) => (
+        {visibleHours.map((hour) => (
           <tr key={hour}>
             <td>{hour}</td>
             {daysOfWeek.map((day) => {
               const scheduleItem = schedule.find(
                 (item) =>
                   item.day === day &&
-                  getHourIndex(item.start, SCHEDULE_HOURS) === index,
+                  getHourIndex(item.start, SCHEDULE_HOURS) ===
+                    getHourIndex(hour, SCHEDULE_HOURS),
               )!
 
               const isEmptyCell = schedule.some(
                 (item) =>
                   item.day === day &&
-                  getHourIndex(item.start, SCHEDULE_HOURS) < index &&
-                  getHourIndex(item.end, SCHEDULE_HOURS) > index,
+                  getHourIndex(item.start, SCHEDULE_HOURS) <
+                    getHourIndex(hour, SCHEDULE_HOURS) &&
+                  getHourIndex(item.end, SCHEDULE_HOURS) >
+                    getHourIndex(hour, SCHEDULE_HOURS),
               )
 
-              return (
-                <ScheduleCell
-                  key={`${day}-${hour}`}
-                  day={day}
-                  hour={hour}
-                  scheduleItem={scheduleItem}
-                  isEmptyCell={isEmptyCell}
-                />
-              )
+              return renderScheduleCell({
+                day,
+                hour,
+                scheduleItem,
+                isEmptyCell,
+              })
             })}
           </tr>
         ))}
