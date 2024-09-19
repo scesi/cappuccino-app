@@ -82,7 +82,7 @@ const extractItemsAtLevel = <T extends object>(
   item: T,
   attributes: (keyof T)[],
   level: string,
-) => {
+): T[] => {
   let result = [item]
 
   for (const attribute of attributes) {
