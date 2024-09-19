@@ -28,43 +28,21 @@ interface Attributes<T> {
  *
  * const levels = [
  * {
- *     "code": 2010010,
  *     "name": "INTRODUCCION A LA PROGRAMACION",
- *     "groups": [
- *       {
- *         "code": "1",
+ *     "groups": [{
  *         "teacher": "SALAZAR SERRUDO CARLA",
- *         "schedule": []
- *       }
- * },
- * {
- *     "code": 2010015,
- *     "name": "SISTEMAS I",
- *     "groups": [
- *       {
- *         "code": "2",
- *         "teacher": "FIORILO LOZADA AMERICO",
- *         "schedule": []
  *       }]
  * },
- *  {
- *      "code": 2010018,
- *      "name": "SISTEMAS DE INFORMACION I",
- *      "groups": [
- *        {
- *          "code": "1",
- *          "teacher": "SALAZAR SERRUDO CARLA",
- *          "schedule": []
- *        }]
+ * {
+ *     "name": "SISTEMAS I",
+ *     "groups": [{
+ *         "teacher": "FIORILO LOZADA AMERICO",
+ *       }]
  * },
  * {
- *    "code":2016092,
  *    "name":"PLANIFICACION Y EVALUACION DE PROYECTOS",
- *    "groups":[
- *       {
- *         "code": "3",
+ *    "groups":[{
  *         "teacher": "JALDIN ROSALES K. ROLANDO",
- *         "schedule": []
  *       }]
  *  }
  * ]
@@ -81,33 +59,15 @@ interface Attributes<T> {
  * console.log(results)
  * // output: [
  * // {
- * //    "code": 2010010,
  * //    "name": "INTRODUCCION A LA PROGRAMACION",
- * //    "groups": [
- * //      {
- * //        "code": "1",
+ * //    "groups": [{
  * //        "teacher": "SALAZAR SERRUDO CARLA",
- * //        "schedule": []
- * //      }
+ * //      }]
  * // },
  * // {
- * //     "code": 2010018,
- * //     "name": "SISTEMAS DE INFORMACION I",
- * //     "groups": [
- * //       {
- * //         "code": "1",
- * //         "teacher": "SALAZAR SERRUDO CARLA",
- * //         "schedule": []
- * //       }]
- * // },
- * // {
- * //   "code":2016092,
  * //   "name":"PLANIFICACION Y EVALUACION DE PROYECTOS",
- * //   "groups":[
- * //      {
- * //        "code": "3",
+ * //   "groups":[{
  * //        "teacher": "JALDIN ROSALES K. ROLANDO",
- * //        "schedule": []
  * //      }]
  * // }
  * // ]
