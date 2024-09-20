@@ -1,0 +1,69 @@
+.navBottomBar {
+  right: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 58px;
+  background-color: #ffff;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.button {
+  font-family: 'Poppins', sans-serif;
+  padding-top: 4px;
+  height: 100%;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  cursor: pointer;
+  background-color: transparent;
+  user-select: none;
+  appearance: none;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  min-width: 80px;
+  max-width: 168px;
+  flex: 1 1 0%;
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 2px 2px #aeaeae84;
+  border-radius: 4px;
+}
+
+.active {
+  font-weight: 600;
+  color: black;
+}
+
+.dropdownEnter {
+  opacity: 1;
+  transform: translateY(-10px);
+  transition:
+    opacity 500ms,
+    transform 500ms;
+}
+
+.DropdownExit {
+  opacity: 0;
+  transform: translateY(0);
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}

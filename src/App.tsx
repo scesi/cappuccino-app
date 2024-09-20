@@ -1,23 +1,15 @@
-import { useState } from 'react'
-
 import { HomePage } from './home/views/home'
-import { DeleteModal } from './shared/ui/delete-modal/delete-modal'
-import { Header } from './shared/ui/header/header'
+import { NavBar, Header } from './shared/ui'
 
 function App() {
-  const [modal, setModal] = useState(false)
-
+  
   return (
     <>
-      <Header />
-      <HomePage />
-      <button onClick={() => setModal(true)}></button>
-      {modal && (
-        <DeleteModal
-          accept={() => setModal(false)}
-          close={() => setModal(false)}
-        />
-      )}
+      <div className="main-layout">
+        <Header />
+        <HomePage />
+      </div>
+      <NavBar />
     </>
   )
 }
