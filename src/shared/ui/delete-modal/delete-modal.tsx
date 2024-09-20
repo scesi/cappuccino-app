@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import styles from '@/shared/ui/delete-modal/delete-modal.module.css'
 
 import { TrashIcon } from '@/shared/ui/icons/trash-icon'
+import Button from '../Button/button'
 
 interface DeleteModalProps {
   accept: () => void
@@ -39,18 +40,14 @@ export const DeleteModal = ({ accept, close }: DeleteModalProps) => {
         }}
       >
         <div className={styles.modalTitle}>
-          <TrashIcon />
+          <TrashIcon className={styles.trashIcon}/>
           <p className={styles.modalText}>
             ¿Estás seguro de limpiar su horario?
           </p>
         </div>
         <div className={styles.buttonsContainer}>
-          <button className={styles.modalButtonAccept} onClick={handleClose}>
-            Cancelar
-          </button>
-          <button className={styles.modalButtonCancel} onClick={handleAccept}>
-            Confirmar
-          </button>
+          <Button variant="cancel" label="Cancelar" onClick={handleClose} />
+          <Button variant="accept" label="Aceptar" onClick={handleAccept} />
         </div>
       </article>
     </div>

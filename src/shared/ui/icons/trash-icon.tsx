@@ -4,8 +4,8 @@ type Props = SVGProps<SVGSVGElement>
 
 export const TrashIcon = (props: Props) => (
   <svg
-    width="53"
-    height="55"
+    width="65"
+    height="65"
     viewBox="0 0 53 55"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

@@ -1,0 +1,28 @@
+.modalButtonAccept {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    color: #242424;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .modalButtonCancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color: #00001d;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
