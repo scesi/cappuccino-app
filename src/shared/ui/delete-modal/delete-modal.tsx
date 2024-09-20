@@ -32,9 +32,10 @@ export const DeleteModal = ({ accept, close }: DeleteModalProps) => {
   }
 
   return (
-    <div className={styles.deleteModalContainer} onClick={handleClose}>
+    <div className={styles.deleteModalContainer} onClick={handleClose} id='modal-container'>
       <article
         className={styles.deleteModal}
+        role='dialog'
         onClick={(e) => {
           e.stopPropagation()
         }}

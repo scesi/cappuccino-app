@@ -13,7 +13,7 @@ describe('<DeleteModal />', () => {
     ).toBeInTheDocument()
 
     expect(screen.getByText('Cancelar')).toBeInTheDocument()
-    expect(screen.getByText('Confirmar')).toBeInTheDocument()
+    expect(screen.getByText('Aceptar')).toBeInTheDocument()
   })
 
   test('should call close when clicking outside the modal', () => {
@@ -21,7 +21,10 @@ describe('<DeleteModal />', () => {
     const close = vi.fn()
     render(<DeleteModal accept={accept} close={close} />)
 
-    fireEvent.click(screen.getByRole('dialog'))
+    const parentElement = screen.getByRole('dialog').parentElement
+    if (parentElement) {
+      fireEvent.click(parentElement)
+    }
     expect(close).toHaveBeenCalled()
   })
 
@@ -30,7 +33,7 @@ describe('<DeleteModal />', () => {
     const close = vi.fn()
     render(<DeleteModal accept={accept} close={close} />)
 
-    fireEvent.click(screen.getByText('Confirmar'))
+    fireEvent.click(screen.getByText('Aceptar'))
 
     expect(accept).toHaveBeenCalled()
     expect(close).toHaveBeenCalled()
