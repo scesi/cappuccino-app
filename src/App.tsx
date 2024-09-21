@@ -1,4 +1,5 @@
 import { HomePage } from './home/views/home'
+import ConfigurationPage from './pages/configuration-page/configuration-page'
 import { NavBar, Header } from './shared/ui'
 
 function App() {
@@ -6,9 +7,8 @@ function App() {
     <>
       <div className="main-layout">
         <Header />
-        <HomePage />
+        <ConfigurationPage/>
       </div>
-      <NavBar />
     </>
   )
 }
