@@ -27,12 +27,8 @@ export const DeleteModal = ({ accept, close }: DeleteModalProps) => {
     close()
   }
 
-  const handleClose = () => {
-    close()
-  }
-
   return (
-    <div className={styles.deleteModalContainer} onClick={handleClose} id='modal-container'>
+    <div className={styles.deleteModalContainer} onClick={() => close()} id='modal-container'>
       <article
         className={styles.deleteModal}
         role='dialog'
@@ -47,7 +43,7 @@ export const DeleteModal = ({ accept, close }: DeleteModalProps) => {
           </p>
         </div>
         <div className={styles.buttonsContainer}>
-          <Button variant="cancel" label="Cancelar" onClick={handleClose} />
+          <Button variant="cancel" label="Cancelar" onClick={() => close()} />
           <Button variant="accept" label="Aceptar" onClick={handleAccept} />
         </div>
       </article>
