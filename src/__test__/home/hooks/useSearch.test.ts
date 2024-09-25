@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 
 import systemsEngineerData from '../data/systems-engineer.json'
 
-describe('useSearch hook tests', () => {
+describe('useSearch hook', () => {
   it('should initialize with empty results', () => {
     const items = systemsEngineerData.levels
     const key = {
