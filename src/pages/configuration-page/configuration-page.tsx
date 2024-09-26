@@ -9,18 +9,26 @@ const ConfigurationPage = () => {
       </p>
       <p className={styles.configLabel}>Modo Oscuro</p>
       <p className={styles.configVisualTitle}>Configuracion Visual</p>
-      <div className={styles.sizeFontContainer}>
+      <div className={styles.configRowContainer}>
         <p className={styles.configLabel}>Tamaño de Fuente</p>
-        <div className={styles.dropdownSizeFont}>
-          <button className="">Selecciona el tamano</button>
-          <div className={styles.dropdownSizeContent}>
-            <button className="">Pequeno</button>
-            <button className="">Mediano</button>
-            <button className="">Grande</button>
-          </div>
+        <div>
+          <select className={styles.selector} name="select">
+            <option value="value1">Pequeno</option>
+            <option value="value2">Mediano</option>
+            <option value="value3">Grande</option>
+          </select>
         </div>
       </div>
-      <p className={styles.configLabel}>Estilo de Fuente</p>
+      <div className={styles.configRowContainer}>
+        <p className={styles.configLabel}>Estilo de Fuente</p>
+        <div>
+          <select className={styles.selector} name="select">
+            <option value="value1">Poppins</option>
+            <option value="value2">Roboto</option>
+            <option value="value3">Times</option>
+          </select>
+        </div>
+      </div>
       <p className={styles.configLabel}>Temas</p>
       <div className={styles.configButtonContainer}>
         <button className={styles.configButtonSecondary}>Cancelar</button>
