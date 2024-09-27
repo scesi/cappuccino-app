@@ -1,5 +1,5 @@
 import { HeroSection, LinkCard } from '@/home/components'
-
+import { CareerDetails, SemesterAccordion } from '@/schedule/components'
 import { SearchBar } from '@/shared/ui'
 
 import styles from './home-page.module.css'
@@ -8,6 +8,74 @@ export const HomePage = () => {
   return (
     <>
       <HeroSection />
+
+      <CareerDetails careerName="INGENIERÍA DE SISTEMAS">
+        <SemesterAccordion
+          semester={{
+            id: '1',
+            label: 'Semestre 1 (Nivel A)',
+            subjects: [
+              {
+                id: '1',
+                name: 'INGLÉS I',
+                groups: [
+                  {
+                    code: '1',
+                    schedule: [],
+                    teacherName: 'CESPEDES GUIZADA MARIA BENITA',
+                  },
+                  {
+                    code: '2',
+                    schedule: [],
+                    teacherName: 'CESPEDES GUIZADA MARIA BENITA',
+                  },
+                  {
+                    code: '3',
+                    schedule: [],
+                    teacherName: 'PEETERS ILONAA MAGDA LENA',
+                  },
+                  {
+                    code: '4',
+                    schedule: [],
+                    teacherName: 'GRILO SALVATIERRA MARIA ESTELA',
+                  },
+                  {
+                    code: '5',
+                    schedule: [],
+                    teacherName: 'CESPEDES GUIZADA MARIA BENITA',
+                  },
+                ],
+              },
+              {
+                id: '2',
+                name: 'FÍSICA GENERAL',
+                groups: [],
+              },
+              {
+                id: '3',
+                name: 'INTRODUCCIÓN A LA PROGRAMACIÓN',
+                groups: [],
+              },
+            ],
+          }}
+        ></SemesterAccordion>
+
+        <SemesterAccordion
+          semester={{
+            id: '2',
+            label: 'Semestre 2 (Nivel B)',
+            subjects: [],
+          }}
+        ></SemesterAccordion>
+
+        <SemesterAccordion
+          semester={{
+            id: '3',
+            label: 'Semestre 3 (Nivel C)',
+            subjects: [],
+          }}
+        ></SemesterAccordion>
+      </CareerDetails>
 
       <section className={styles.careers}>
         <SearchBar title="Busca tu carrera" />

@@ -1,0 +1,39 @@
+.semesterAccordion {
+  background-color: #d7dbff;
+  margin: 0;
+  padding: 0.7rem;
+  border-radius: 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.semesterName {
+  margin: 0;
+  font-size: 12px;
+}
+
+.subjectsContainer {
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+.semesterArrowIcon {
+  transform: rotate(90deg);
+}
+
+.semesterAccordionSubjects {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-inline: 0.7rem;
+  padding-block: 0.3rem;
+  border-left: 1.5px solid #d7dbff;
+  gap: 10px;
+}
+
+.semesterAccordionSubjects {
+  display: flex;
+  flex-direction: column;
+}
