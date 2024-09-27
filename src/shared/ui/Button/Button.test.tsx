@@ -1,15 +1,52 @@
-import { describe, expect, test } from 'vitest'
-import { render, screen } from '@testing-library/react'
-import { userEvent } from '@testing-library/user-event'
-import { Button } from './index'
+import { render, screen, fireEvent } from '@testing-library/react'
+import Button from './button'
+import { describe, it, expect, vi } from 'vitest'
 
-describe('<Button />', () => {
-  test('should increment counter on click', async () => {
-    render(<Button />)
-    const button = screen.getByRole('button')
+describe('Button component', () => {
+  it('renders an accept button', () => {
+    const mockOnClick = vi.fn()
 
-    expect(button).toHaveTextContent('0')
-    await userEvent.click(button)
-    expect(button).toHaveTextContent('1')
+    render(<Button onClick={mockOnClick} label="Accept" variant="accept" />)
+
+    const button = screen.getByText('Accept')
+
+    expect(button).toBeInTheDocument()
+
+    expect(button).toHaveAttribute('type', 'button')
+
+    fireEvent.click(button)
+
+    expect(mockOnClick).toHaveBeenCalled()
+  })
+
+  it('renders a cancel button', () => {
+    const mockOnClick = vi.fn()
+
+    render(<Button onClick={mockOnClick} label="Cancel" variant="cancel" />)
+
+    const button = screen.getByText('Cancel')
+
+    expect(button).toBeInTheDocument()
+
+    fireEvent.click(button)
+
+    expect(mockOnClick).toHaveBeenCalled()
+  })
+
+  it('renders a button with a specific type', () => {
+    const mockOnClick = vi.fn()
+
+    render(
+      <Button
+        onClick={mockOnClick}
+        label="Submit"
+        type="submit"
+        variant="accept"
+      />
+    )
+
+    const button = screen.getByText('Submit')
+
+    expect(button).toHaveAttribute('type', 'submit')
   })
 })
