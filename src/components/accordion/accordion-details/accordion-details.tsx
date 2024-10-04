@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { useAccordionTransition } from '@/shared/hooks/useAccordionTransition'
+import { useAccordionTransition } from '@/hooks/useAccordionTransition'
 
 import styles from './accordion-details.module.css'
 
