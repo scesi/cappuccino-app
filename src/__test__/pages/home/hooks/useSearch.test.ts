@@ -1,8 +1,9 @@
 import { renderHook, act } from '@testing-library/react'
-import { useSearch } from '@/home/hooks'
 import { describe, expect, it } from 'vitest'
 
-import systemsEngineerData from '../data/systems-engineer.json'
+import { useSearch } from '@/pages/home/hooks'
+
+import systemsEngineerData from '@/__test__/data/systems-engineer.json'
 
 describe('useSearch hook', () => {
   it('should initialize with empty results', () => {
