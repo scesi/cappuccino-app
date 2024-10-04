@@ -1,4 +1,4 @@
-import { SearchBar } from '@/shared/ui'
+import { SearchBar } from '@/components'
 
 import styles from './career-details.module.css'
 

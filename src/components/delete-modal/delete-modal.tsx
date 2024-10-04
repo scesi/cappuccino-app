@@ -3,10 +3,10 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useEffect } from 'react'
 
-import styles from '@/shared/ui/delete-modal/delete-modal.module.css'
-
-import { TrashIcon } from '@/shared/ui/icons/trash-icon'
+import { TrashIcon } from '@/components/icons/trash-icon'
 import Button from '../Button/button'
+
+import styles from './delete-modal.module.css'
 
 interface DeleteModalProps {
   accept: () => void
@@ -28,16 +28,20 @@ export const DeleteModal = ({ accept, close }: DeleteModalProps) => {
   }
 
   return (
-    <div className={styles.deleteModalContainer} onClick={() => close()} id='modal-container'>
+    <div
+      className={styles.deleteModalContainer}
+      onClick={() => close()}
+      id="modal-container"
+    >
       <article
         className={styles.deleteModal}
-        role='dialog'
+        role="dialog"
         onClick={(e) => {
           e.stopPropagation()
         }}
       >
         <div className={styles.modalTitle}>
-          <TrashIcon className={styles.trashIcon}/>
+          <TrashIcon className={styles.trashIcon} />
           <p className={styles.modalText}>
             ¿Estás seguro de limpiar su horario?
           </p>

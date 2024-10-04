@@ -2,7 +2,7 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-} from '@/shared/ui/accordion'
+} from '@/components/accordion'
 import { Subject } from '@/models/degree-program'
 import { Group } from '../group/group'
 import { SubjectIconExpand } from './subject-icon-expand/subject-icon-expand'

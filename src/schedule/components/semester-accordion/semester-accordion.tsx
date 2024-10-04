@@ -2,10 +2,10 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-} from '@/shared/ui/accordion'
+} from '@/components/accordion'
 import { Semester } from '@/models/degree-program'
 import { SubjectAccordion } from '../subject-accordion/subject-accordion'
-import { ArrowDown } from '@/shared/ui/icons/arrow-down'
+import { ArrowDown } from '@/components/icons/arrow-down'
 
 import styles from './semester-accordion.module.css'
 

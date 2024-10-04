@@ -1,6 +1,6 @@
-import { HeroSection, LinkCard } from '@/home/components'
+import { HeroSection, LinkCard } from '@/pages/home/components'
 import { CareerDetails, SemesterAccordion } from '@/schedule/components'
-import { SearchBar } from '@/shared/ui'
+import { SearchBar } from '@/components'
 
 import styles from './home-page.module.css'
 

@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AccordionContext } from '@/shared/ui/accordion/accordion-context'
+import { AccordionContext } from '@/components/accordion/accordion-context'
 
 import styles from './subject-icon-expand.module.css'
 

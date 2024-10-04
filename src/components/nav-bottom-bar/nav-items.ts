@@ -6,7 +6,7 @@ import {
   CalendarEditActive,
   Coffee,
   CoffeeActive,
-} from '@/shared/ui/icons'
+} from '@/components/icons'
 
 interface NavItem {
   id: string

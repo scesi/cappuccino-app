@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from 'react'
-import { AccordionContext } from '@/shared/ui/accordion/accordion-context'
+import { AccordionContext } from '@/components/accordion/accordion-context'
 
 export function useAccordionTransition<T extends HTMLElement>() {
   const { expanded, animationDuration } =
@@ -31,7 +31,7 @@ export function useAccordionTransition<T extends HTMLElement>() {
       }
 
       setHeight(currentContentHeight)
-      
+
       if (expanded) {
         setTimeout(() => setHeight('auto'), animationDuration ?? 220)
       } else {

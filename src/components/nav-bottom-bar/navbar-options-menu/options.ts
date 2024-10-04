@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react'
 
-import { Calendar, PlusCircle, Trash } from '@/shared/ui/icons'
+import { Calendar, PlusCircle, Trash } from '@/components/icons'
 
 interface NavbarOptionMenuItem {
   id: number
