@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import styles from './button.module.css'
 
 interface ButtonProps {
@@ -7,28 +9,18 @@ interface ButtonProps {
   variant: 'cancel' | 'accept'
 }
 
-const Button = ({ onClick, label, type="button", variant }: ButtonProps) => {
+const Button = ({ onClick, label, type = 'button', variant }: ButtonProps) => {
   return (
-    <>
-      {variant === 'accept' && (
-        <button
-          className={styles.modalButtonAccept}
-          onClick={onClick}
-          type={type}
-        >
-          {label}
-        </button>
-      )}
-      {variant === 'cancel' && (
-        <button
-          className={styles.modalButtonCancel}
-          onClick={onClick}
-          type={type}
-        >
-          {label}
-        </button>
-      )}
-    </>
+    <button
+      className={clsx({
+        [styles.modalButtonAccept]: variant === 'accept',
+        [styles.modalButtonCancel]: variant === 'cancel',
+      })}
+      onClick={onClick}
+      type={type}
+    >
+      {label}
+    </button>
   )
 }
 export default Button
