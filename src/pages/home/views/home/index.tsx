@@ -1,5 +1,5 @@
 import { HeroSection, LinkCard } from '@/pages/home/components'
-import { CareerDetails, SemesterAccordion } from '@/schedule/components'
+import { CareerDetails, SemesterAccordion } from '@/components/schedule'
 import { SearchBar } from '@/components'
 
 import styles from './home-page.module.css'
