@@ -1,4 +1,4 @@
-import arrowIcon from '@/assets/arrowIcon.svg'
+import arrowIcon from '@/assets/icons/arrow-icon.svg'
 import styles from './link-card.module.css'
 
 export const LinkCard = ({ title }: { title: string }) => {
