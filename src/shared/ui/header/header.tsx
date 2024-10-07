@@ -1,5 +1,5 @@
-import logoSCESI from '@/assets/logoSCESI-Normal.svg'
-import threedots from '@/assets/threedots.svg'
+import logoSCESI from '@/assets/icons/logo-scesi-normal.svg'
+import threedots from '@/assets/icons/three-dots.svg'
 
 import styles from './header.module.css'
 
