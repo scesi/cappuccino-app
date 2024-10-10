@@ -1,8 +1,7 @@
-import { HomePage } from './home/views/home'
-import { NavBar, Header } from './shared/ui'
+import { HomePage } from './pages/home/views/home'
+import { NavBar, Header } from './components'
 
 function App() {
-  
   return (
     <>
       <div className="main-layout">
